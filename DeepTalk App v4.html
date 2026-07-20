@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Deep Talk">
+<meta name="theme-color" content="#1a3a5c">
+<title>Deep Talk – Resource Talk</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="manifest" id="manifest-placeholder">
+<style>
+:root {
+  --navy: #1a3a5c;
+  --blue: #2c6fa8;
+  --sky: #4a9fd4;
+  --gold: #f0c040;
+  --cream: #faf8f4;
+  --card-bg: #ffffff;
+  --text: #1a2a3a;
+  --muted: #7a8fa8;
+  --radius: 20px;
+  --shadow: 0 4px 24px rgba(26,58,92,0.10);
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html, body { height:100%; background: var(--cream); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', 'Segoe UI', sans-serif; color: var(--text); overflow-x: hidden; }
+
+/* SPLASH */
+#splash {
+  position:fixed; inset:0; background: var(--navy);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:1000; transition: opacity 0.6s ease;
+}
+#splash.hide { opacity:0; pointer-events:none; }
+.splash-icon { width:90px; height:90px; margin-bottom:24px; }
+.splash-title { color:white; font-size:28px; font-weight:700; letter-spacing:-0.5px; }
+.splash-sub { color: var(--sky); font-size:14px; margin-top:6px; }
+.splash-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--sky); animation: bounce 1.2s infinite; margin: 24px 4px 0; }
+.splash-dot:nth-child(2){ animation-delay:0.2s; }
+.splash-dot:nth-child(3){ animation-delay:0.4s; }
+@keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} }
+
+/* LAYOUT */
+.app { max-width:480px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column; }
+.header {
+  background: var(--navy);
+  padding: 52px 20px 20px;
+  text-align:center;
+  position: relative;
+}
+.header h1 { color:white; font-size:22px; font-weight:700; letter-spacing:-0.3px; }
+.header .tagline { color: var(--sky); font-size:12px; margin-top:3px; font-style:italic; }
+.lang-toggle {
+  position:absolute; top:52px; right:16px;
+  display:flex; gap:6px;
+}
+.lang-btn {
+  padding:5px 11px; border-radius:12px; border:none; font-size:12px; font-weight:600;
+  background: rgba(255,255,255,0.15); color:rgba(255,255,255,0.7); cursor:pointer;
+  transition: all 0.2s;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); }
+
+/* TABS */
+.tab-bar {
+  display:flex; background:white;
+  border-bottom: 1px solid rgba(26,58,92,0.08);
+  position: sticky; top:0; z-index:100;
+  box-shadow: 0 2px 8px rgba(26,58,92,0.06);
+}
+.tab-btn {
+  flex:1; padding:14px 4px 12px; border:none; background:none;
+  font-size:11px; font-weight:600; color: var(--muted); cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.tab-btn .ti { font-size:20px; }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* SCROLL AREA */
+.tab-content { display:none; flex:1; overflow-y:auto; padding:16px; padding-bottom:32px; }
+.tab-content.active { display:block; }
+
+/* PLAY TAB */
+.play-header { text-align:center; margin-bottom:16px; }
+.play-header h2 { font-size:16px; font-weight:600; color: var(--navy); }
+.play-header p { font-size:13px; color: var(--muted); margin-top:2px; }
+
+/* PACKAGE SELECT */
+.pkg-scroll { display:flex; gap:10px; overflow-x:auto; padding:4px 0 12px; scrollbar-width:none; }
+.pkg-scroll::-webkit-scrollbar { display:none; }
+.pkg-chip {
+  flex-shrink:0; padding:8px 14px; border-radius:14px; border:2px solid var(--sky);
+  background:white; font-size:13px; font-weight:600; color: var(--blue);
+  cursor:pointer; transition: all 0.2s; white-space:nowrap;
+}
+.pkg-chip.active { background: var(--blue); color:white; border-color:var(--blue); }
+.pkg-chip.locked { border-color:#dde4eb; color: var(--muted); }
+.pkg-chip.locked.active { background: var(--muted); border-color:var(--muted); color:white; }
+
+/* MAIN CARD */
+.card-wrap {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:28px 24px;
+  margin-bottom:16px;
+  min-height:180px;
+  position:relative;
+  border-top: 4px solid var(--sky);
+}
+.card-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.card-badge {
+  font-size:11px; font-weight:700; color: var(--sky); text-transform:uppercase; letter-spacing:0.5px;
+}
+.fav-btn { background:none; border:none; font-size:24px; cursor:pointer; transition:transform 0.15s; padding:4px; }
+.fav-btn:active { transform: scale(0.85); }
+.card-text {
+  font-size:19px; line-height:1.55; color: var(--text); font-weight:500;
+  min-height:80px;
+}
+.card-nav { display:flex; gap:10px; margin-top:20px; }
+.card-nav button {
+  flex:1; padding:13px; border-radius:14px; border:none; font-size:15px; font-weight:600;
+  cursor:pointer; transition: all 0.15s;
+}
+.card-nav button:active { transform:scale(0.96); }
+.btn-prev { background: #eef2f7; color: var(--navy); }
+.btn-next { background: var(--blue); color:white; }
+.btn-shuffle { flex:0; padding:13px 16px; background: var(--gold); color: var(--navy); border-radius:14px; border:none; font-size:18px; cursor:pointer; }
+.card-progress { text-align:center; font-size:12px; color: var(--muted); margin-top:8px; }
+.progress-bar { height:3px; background:#eef2f7; border-radius:2px; margin-top:6px; }
+.progress-fill { height:100%; background: var(--sky); border-radius:2px; transition:width 0.3s; }
+
+/* LOCKED CARD */
+.locked-card {
+  background: #f5f8fc; border-radius: var(--radius);
+  padding:32px 24px; text-align:center;
+  border: 2px dashed #c8d8e8; margin-bottom:16px;
+}
+.locked-icon { font-size:40px; margin-bottom:12px; }
+.locked-title { font-size:17px; font-weight:700; color:var(--navy); }
+.locked-sub { font-size:13px; color:var(--muted); margin:6px 0 16px; line-height:1.5; }
+.unlock-btn {
+  background: var(--blue); color:white; border:none; border-radius:14px;
+  padding:13px 24px; font-size:15px; font-weight:600; cursor:pointer;
+  transition: all 0.15s;
+}
+.unlock-btn:active { transform:scale(0.96); }
+
+/* TIMER */
+.timer-card {
+  background: var(--card-bg); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding:20px 24px; margin-bottom:16px;
+  text-align:center;
+}
+.timer-label { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+.timer-display {
+  font-size:52px; font-weight:700; color: var(--navy);
+  font-variant-numeric:tabular-nums; letter-spacing:-1px;
+  line-height:1.1; transition: color 0.3s;
+}
+.timer-display.warn { color: #e05a3a; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+.timer-btns { display:flex; gap:8px; margin-top:14px; justify-content:center; flex-wrap:wrap; }
+.timer-btns button {
+  padding:8px 16px; border-radius:12px; border:none; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all 0.15s;
+}
+.timer-btns button:active { transform:scale(0.94); }
+.tbtn-min { background:#eef2f7; color:var(--navy); }
+.tbtn-start { background:var(--blue); color:white; padding:8px 22px; }
+.tbtn-reset { background:#fdecea; color:#c0392b; }
+.timer-preset-label { font-size:11px; color:var(--muted); margin-top:10px; }
+.timer-presets { display:flex; gap:6px; justify-content:center; margin-top:6px; }
+.tpreset {
+  padding:5px 12px; border-radius:10px; border:1px solid #dde4eb;
+  background:white; font-size:12px; font-weight:600; color:var(--muted);
+  cursor:pointer; transition:all 0.15s;
+}
+.tpreset.active { background:var(--navy); color:white; border-color:var(--navy); }
+
+/* PACKAGES TAB */
+.section-title { font-size:14px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin:0 0 12px; }
+.pkg-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+.pkg-card {
+  background:white; border-radius:var(--radius); padding:18px 14px; text-align:center;
+  box-shadow: var(--shadow); cursor:pointer; transition:all 0.2s;
+  border:2px solid transparent; position:relative; overflow:hidden;
+}
+.pkg-card.owned { border-color:#27ae60; }
+.pkg-card.locked { opacity:0.75; }
+.pkg-card:active { transform:scale(0.96); }
+.pkg-emoji { font-size:30px; display:block; margin-bottom:6px; }
+.pkg-name { font-size:13px; font-weight:700; color:var(--navy); line-height:1.3; }
+.pkg-count { font-size:11px; color:var(--muted); margin-top:2px; }
+.pkg-price {
+  display:inline-block; margin-top:8px; padding:4px 12px; border-radius:10px;
+  font-size:12px; font-weight:700;
+}
+.pkg-price.free { background:#e8f8f0; color:#27ae60; }
+.pkg-price.paid { background:#eef4fc; color:var(--blue); }
+.pkg-price.owned { background:#e8f8f0; color:#27ae60; }
+.owned-badge {
+  position:absolute; top:8px; right:8px; background:#27ae60; color:white;
+  font-size:10px; font-weight:700; padding:2px 7px; border-radius:8px;
+}
+.bundle-box {
+  background: var(--navy); border-radius:var(--radius); padding:20px;
+  color:white; margin-bottom:12px;
+}
+.bundle-title { font-size:16px; font-weight:700; }
+.bundle-sub { font-size:13px; color: rgba(255,255,255,0.65); margin-top:4px; line-height:1.4; }
+.bundle-price { font-size:28px; font-weight:700; color: var(--gold); margin:12px 0 4px; }
+.bundle-oldprice { font-size:13px; color:rgba(255,255,255,0.5); text-decoration:line-through; }
+.bundle-btn {
+  width:100%; padding:13px; border-radius:14px; border:none;
+  background: var(--gold); color: var(--navy); font-size:15px; font-weight:700;
+  cursor:pointer; margin-top:12px; transition:all 0.15s;
+}
+.bundle-btn:active { transform:scale(0.97); }
+
+/* FAVORITES TAB */
+.fav-card {
+  background:white; border-radius:16px; padding:18px; margin-bottom:12px;
+  box-shadow: var(--shadow); display:flex; align-items:flex-start; gap:12px;
+}
+.fav-card-text { flex:1; font-size:15px; line-height:1.5; color:var(--text); }
+.fav-card-meta { font-size:11px; color:var(--muted); margin-top:6px; }
+.fav-remove { background:none; border:none; font-size:20px; cursor:pointer; padding:2px; flex-shrink:0; }
+.empty-state { text-align:center; padding:60px 20px; }
+.empty-icon { font-size:48px; display:block; margin-bottom:16px; }
+.empty-title { font-size:18px; font-weight:700; color:var(--navy); }
+.empty-sub { font-size:14px; color:var(--muted); margin-top:6px; line-height:1.5; }
+
+/* SETTINGS */
+.setting-group { background:white; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden; }
+.setting-row {
+  padding:16px 18px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid #f0f4f8;
+}
+.setting-row:last-child { border-bottom:none; }
+.setting-label { font-size:15px; font-weight:600; color:var(--text); }
+.setting-sub { font-size:12px; color:var(--muted); margin-top:1px; }
+.setting-value { font-size:14px; color:var(--blue); font-weight:600; }
+.about-box {
+  background: var(--navy); border-radius:var(--radius); padding:24px;
+  text-align:center; color:white;
+}
+.about-logo { font-size:40px; margin-bottom:12px; }
+.about-title { font-size:18px; font-weight:700; }
+.about-version { font-size:12px; color:rgba(255,255,255,0.5); margin-top:4px; }
+.about-quote {
+  font-size:14px; color:rgba(255,255,255,0.75); margin:16px 0;
+  font-style:italic; line-height:1.6; border-top:1px solid rgba(255,255,255,0.15); padding-top:16px;
+}
+
+/* TOAST */
+#toast {
+  position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(20px);
+  background: var(--navy); color:white; padding:12px 20px; border-radius:14px;
+  font-size:14px; font-weight:500; opacity:0; transition:all 0.3s; z-index:500;
+  white-space:nowrap; pointer-events:none; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* MODAL */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(26,58,92,0.5); z-index:200;
+  display:none; align-items:flex-end; justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.modal-overlay.show { display:flex; }
+.modal-sheet {
+  background:white; border-radius:24px 24px 0 0; padding:32px 24px 48px;
+  width:100%; max-width:480px; text-align:center;
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+.modal-emoji { font-size:48px; margin-bottom:12px; }
+.modal-title { font-size:20px; font-weight:700; color:var(--navy); }
+.modal-sub { font-size:14px; color:var(--muted); margin:8px 0 24px; line-height:1.5; }
+.modal-price { font-size:32px; font-weight:700; color:var(--blue); margin-bottom:4px; }
+.modal-btn { width:100%; padding:15px; border-radius:16px; border:none; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:10px; }
+.modal-btn.primary { background:var(--blue); color:white; }
+.modal-btn.secondary { background:#eef2f7; color:var(--navy); }
+.modal-btn:active { transform:scale(0.97); }
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <img class="splash-icon" src="data:image/png;base64,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" alt="">
+  <div class="splash-title">Deep Talk</div>
+  <div class="splash-sub">Resource Talk Edition</div>
+  <div style="display:flex">
+    <div class="splash-dot"></div>
+    <div class="splash-dot"></div>
+    <div class="splash-dot"></div>
+  </div>
+</div>
+
+<div class="app">
+  <!-- HEADER -->
+  <div class="header">
+    <h1>💬 Deep Talk</h1>
+    <div class="tagline" id="h-tagline">Die Frage ist der Suchbegriff</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="showTab('play')">
+      <span class="ti">🃏</span>
+      <span id="tab-play-label">Spielen</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('packages')">
+      <span class="ti">📦</span>
+      <span id="tab-pkg-label">Pakete</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('favorites')">
+      <span class="ti">❤️</span>
+      <span id="tab-fav-label">Favoriten</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('settings')">
+      <span class="ti">⚙️</span>
+      <span id="tab-set-label">Einstellungen</span>
+    </button>
+  </div>
+
+  <!-- TAB: PLAY -->
+  <div id="tab-play" class="tab-content active">
+    <div class="play-header">
+      <h2 id="play-title">Wähle ein Paket</h2>
+      <p id="play-sub">Tippe auf ein Paket um zu spielen</p>
+    </div>
+    <div class="pkg-scroll" id="pkg-chips"></div>
+
+    <!-- CARD -->
+    <div id="card-area"></div>
+
+    <!-- TIMER -->
+    <div class="timer-card">
+      <div class="timer-label" id="timer-label">Timer</div>
+      <div class="timer-display" id="timer-display">5:00</div>
+      <div class="timer-btns">
+        <button class="tbtn-start" id="tbtn-start" onclick="toggleTimer()">▶ Start</button>
+        <button class="tbtn-reset" onclick="resetTimer()">↺</button>
+      </div>
+      <div class="timer-preset-label" id="timer-preset-label">Minuten</div>
+      <div class="timer-presets">
+        <button class="tpreset" onclick="setTimerMinutes(3)">3</button>
+        <button class="tpreset active" onclick="setTimerMinutes(5)">5</button>
+        <button class="tpreset" onclick="setTimerMinutes(10)">10</button>
+        <button class="tpreset" onclick="setTimerMinutes(15)">15</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: PACKAGES -->
+  <div id="tab-packages" class="tab-content">
+    <div class="section-title" id="pkg-section-title">Pakete</div>
+    <div class="pkg-grid" id="pkg-grid"></div>
+    <div class="section-title" id="bundle-section-title">Bundles</div>
+    <div id="bundles-area"></div>
+  </div>
+
+  <!-- TAB: FAVORITES -->
+  <div id="tab-favorites" class="tab-content">
+    <div id="fav-list"></div>
+  </div>
+
+  <!-- TAB: SETTINGS -->
+  <div id="tab-settings" class="tab-content">
+    <div class="setting-group">
+      <div class="setting-row">
+        <div>
+          <div class="setting-label" id="s-lang-label">Sprache</div>
+          <div class="setting-sub" id="s-lang-sub">Deutsch / English</div>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="lang-btn active" id="s-lang-de" onclick="setLang('de')">DE</button>
+          <button class="lang-btn" id="s-lang-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label" id="s-pkg-label">Freigeschaltete Pakete</div>
+        </div>
+        <div class="setting-value" id="s-pkg-count">1 / 10</div>
+      </div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label" id="s-fav-label">Favoriten</div>
+        </div>
+        <div class="setting-value" id="s-fav-count">0</div>
+      </div>
+    </div>
+    <div class="about-box">
+      <div class="about-logo"><img src="data:image/png;base64,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" style="width:56px;height:56px;border-radius:14px"></div>
+      <div class="about-title">Deep Talk</div>
+      <div class="about-version">Resource Talk Edition · v1.0</div>
+      <div class="about-quote" id="about-quote">
+        Die Frage ist der Suchbegriff.<br>Das Gehirn findet, wonach es sucht.
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <button class="modal-btn secondary" onclick="resetAllData()" style="width:100%;margin-top:0" id="s-reset-btn">Alle Daten zurücksetzen</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal()">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div id="modal-emoji" class="modal-emoji">🔒</div>
+    <div id="modal-title" class="modal-title"></div>
+    <div id="modal-sub" class="modal-sub"></div>
+    <div id="modal-price" class="modal-price"></div>
+    <button class="modal-btn primary" id="modal-buy-btn" onclick="confirmPurchase()"></button>
+    <button class="modal-btn secondary" onclick="closeModal()" id="modal-cancel-btn">Abbrechen</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+const state = {
+  lang: 'de',
+  owned: new Set([1,9,10]),
+  favorites: new Set(),
+  currentPkg: 1,
+  cards: [],
+  idx: 0,
+  timerSec: 300,
+  timerMin: 5,
+  timerRunning: false,
+  timerInterval: null,
+  pendingPurchase: null,
+};
+
+// ============================================================
+// TRANSLATIONS
+// ============================================================
+const T = {
+  de: {
+    tagline: 'Die Frage ist der Suchbegriff',
+    play: 'Spielen', packages: 'Pakete', favorites: 'Favoriten', settings: 'Einstellungen',
+    select_pkg: 'Wähle ein Paket', select_pkg_sub: 'Tippe auf ein Paket um zu spielen',
+    timer: 'Timer', minutes: 'Minuten',
+    start: '▶ Start', pause: '⏸ Pause',
+    prev: '← Zurück', next: 'Weiter →',
+    shuffle: '🔀',
+    card_of: 'Karte',
+    of: 'von',
+    free: 'Kostenlos', owned_label: '✓ Gekauft',
+    bundles: 'Bundles',
+    unlock: 'Freischalten',
+    locked_title: 'Paket gesperrt',
+    locked_sub: 'Schalte dieses Paket frei, um alle 25 Karten zu spielen.',
+    unlock_btn: 'Freischalten',
+    cancel: 'Abbrechen',
+    no_fav: 'Noch keine Favoriten',
+    no_fav_sub: 'Tippe das ❤️ auf einer Karte, um sie zu merken.',
+    lang_label: 'Sprache',
+    lang_sub: 'Deutsch / English',
+    pkg_unlocked: 'Freigeschaltete Pakete',
+    fav_label: 'Favoriten',
+    reset: 'Alle Daten zurücksetzen',
+    reset_confirm: 'Wirklich alle Daten löschen?',
+    about_quote: 'Die Frage ist der Suchbegriff.\nDas Gehirn findet, wonach es sucht.',
+    timer_expired: '⏰ Zeit abgelaufen!',
+    continue_discuss: 'Möchtet ihr weiter diskutieren?',
+    next_card: 'Nächste Karte',
+    continue: 'Weiter',
+    pkg_section: 'Pakete',
+    buy_title: 'Paket freischalten',
+    buy_sub: '25 Karten · Einmaliger Kauf · Für immer gespeichert',
+    buy_btn: 'Jetzt freischalten',
+    shuffled: '🔀 Karten gemischt!',
+    fav_added: '❤️ Zu Favoriten hinzugefügt',
+    fav_removed: '💔 Aus Favoriten entfernt',
+    starter_title: 'Starter+ Bundle',
+    starter_sub: 'Pakete 1, 9, 10 + 2 Premium · 125 Karten',
+    starter_price: '3,99 €',
+    starter_old: 'statt 4,95 €',
+    full_title: 'Komplett-Bundle',
+    full_sub: 'Alle 8 Pakete · 200 Karten',
+    full_price: '5,99 €',
+    full_old: 'statt 6,93 €',
+    unlock_bundle: 'Bundle freischalten',
+    pkg_of: 'Paket',
+    pkg_cards: 'Karten',
+    timer_preset: 'Minuten wählen',
+    session_done: '🎉 Alle Karten gespielt! Runde neu starten?',
+  },
+  en: {
+    tagline: 'The question is the search term',
+    play: 'Play', packages: 'Packages', favorites: 'Favorites', settings: 'Settings',
+    select_pkg: 'Choose a pack', select_pkg_sub: 'Tap a pack to start playing',
+    timer: 'Timer', minutes: 'Minutes',
+    start: '▶ Start', pause: '⏸ Pause',
+    prev: '← Back', next: 'Next →',
+    shuffle: '🔀',
+    card_of: 'Card',
+    of: 'of',
+    free: 'Free', owned_label: '✓ Owned',
+    bundles: 'Bundles',
+    unlock: 'Unlock',
+    locked_title: 'Pack locked',
+    locked_sub: 'Unlock this pack to play all 25 cards.',
+    unlock_btn: 'Unlock',
+    cancel: 'Cancel',
+    no_fav: 'No favorites yet',
+    no_fav_sub: 'Tap ❤️ on any card to save it here.',
+    lang_label: 'Language',
+    lang_sub: 'Deutsch / English',
+    pkg_unlocked: 'Unlocked packages',
+    fav_label: 'Favorites',
+    reset: 'Reset all data',
+    reset_confirm: 'Really delete all data?',
+    about_quote: 'The question is the search term.\nThe brain finds what it seeks.',
+    timer_expired: '⏰ Time\'s up!',
+    continue_discuss: 'Continue the discussion?',
+    next_card: 'Next Card',
+    continue: 'Continue',
+    pkg_section: 'Packs',
+    buy_title: 'Unlock Pack',
+    buy_sub: '25 cards · One-time purchase · Saved forever',
+    buy_btn: 'Unlock now',
+    shuffled: '🔀 Cards shuffled!',
+    fav_added: '❤️ Added to favorites',
+    fav_removed: '💔 Removed from favorites',
+    starter_title: 'Starter+ Bundle',
+    starter_sub: 'Packs 1, 9, 10 + 2 Premium · 125 cards',
+    starter_price: '€3.99',
+    starter_old: 'instead of €4.95',
+    full_title: 'Complete Bundle',
+    full_sub: 'All 8 packs · 200 cards',
+    full_price: '€5.99',
+    full_old: 'instead of €6.93',
+    unlock_bundle: 'Unlock bundle',
+    pkg_of: 'Pack',
+    pkg_cards: 'cards',
+    timer_preset: 'Select minutes',
+    session_done: '🎉 All cards played! Start a new round?',
+  }
+};
+const t = (k) => T[state.lang][k] || k;
+
+// ============================================================
+// PACKAGES META
+// ============================================================
+const PACKAGES = [
+  // ⚠️ SPRACHHINWEIS: Sprichwörter und Redewendungen sind kulturell gebunden.
+  // Für jede neue Sprache müssen kulturell äquivalente Sprichwörter einzeln geprüft
+  // und gegebenenfalls ersetzt werden. NIEMALS direkt übersetzen.
+
+  // ── KOSTENLOS (3 Pakete · 75 Fragen) ──────────────────────────────────────
+  {id:1, emoji:'😄', price:0, isFree:true,
+    name:{de:'Der amüsante Einstieg', en:'The Amusing Start'},
+    desc:{de:'Lachen, Geschichten & schöne Erinnerungen', en:'Laughter, stories & beautiful memories'}},
+  {id:9, emoji:'🌱', price:0, isFree:true,
+    name:{de:'Offen für Neues?', en:'Open to New Things?'},
+    desc:{de:'Neugier, Wachstum & natürlicher Fluss', en:'Curiosity, growth & natural flow'}},
+  {id:10, emoji:'🤔', price:0, isFree:true,
+    name:{de:'Stimmt das wirklich?', en:'Is That Really True?'},
+    desc:{de:'Sprichwörter & Zitate – hinterfragen, ergänzen, entdecken', en:'Proverbs & quotes – question, expand, discover'}},
+
+  // ── PREMIUM (7 Pakete · 175 Fragen) ───────────────────────────────────────
+  {id:2, emoji:'🌅', price:0.99, isFree:false,
+    name:{de:'Schöne Erinnerungen', en:'Beautiful Memories'},
+    desc:{de:'Deine schönsten Orte, Begegnungen & Momente', en:'Your most beautiful places, encounters & moments'}},
+  {id:3, emoji:'✨', price:0.99, isFree:false,
+    name:{de:'Was mir Freude macht', en:'What Brings Me Joy'},
+    desc:{de:'Die kleinen & großen Dinge, die dich glücklich machen', en:'The small & big things that make you happy'}},
+  {id:4, emoji:'💪', price:0.99, isFree:false,
+    name:{de:'Was mich ausmacht', en:'What Makes Me Me'},
+    desc:{de:'Deine Stärken, Werte & prägenden Menschen', en:'Your strengths, values & defining people'}},
+  {id:5, emoji:'🚀', price:0.99, isFree:false,
+    name:{de:'Zukunftsprojekte & Pläne', en:'Future Projects & Plans'},
+    desc:{de:'Konkrete Projekte, erste Schritte & aktuelle Vorhaben', en:'Concrete projects, first steps & current plans'}},
+  {id:6, emoji:'👥', price:0.99, isFree:false,
+    name:{de:'Menschen in meinem Leben', en:'People in My Life'},
+    desc:{de:'Die Menschen, die dich inspirieren & verbinden', en:'The people who inspire & connect you'}},
+  {id:7, emoji:'💬', price:0.99, isFree:false,
+    name:{de:'Zitate, die mich inspirieren', en:'Quotes That Inspire Me'},
+    desc:{de:'Weisheiten, die zum Nachdenken & Lächeln bringen', en:'Wisdom that makes you think & smile'}},
+  {id:8, emoji:'🎭', price:0.99, isFree:false,
+    name:{de:'Amüsant & unkonventionell', en:'Amusing & Unconventional'},
+    desc:{de:'Überraschende, lustige & unerwartete Fragen', en:'Surprising, funny & unexpected questions'}},
+];
+
+// ============================================================
+// ALL 200 CARDS
+// ============================================================
+const ALL_CARDS = [
+  // PAKET 1 (25 Karten)
+  {id:101,pkg:1,de:"Was war der lustigste Streich, den du je gespielt hast?",en:"What was the funniest prank you ever pulled?"},
+  {id:102,pkg:1,de:"Was war deine lustigste Reisegeschichte?",en:"What was your funniest travel story?"},
+  {id:103,pkg:1,de:"'Wenn ich mal vermisst werde, druckt mein Bild auf Weinflaschenetiketten.' – Was wäre dein Etikett?",en:"'If I ever go missing, put my picture on wine bottles.' – What would your label say?"},
+  {id:104,pkg:1,de:"Erzähle eine lustige Anekdote aus deiner Kindheit.",en:"Tell a funny anecdote from your childhood."},
+  {id:105,pkg:1,de:"Was war dein schönster Urlaub?",en:"What was your most beautiful vacation?"},
+  {id:106,pkg:1,de:"Welche drei Erfindungen machen dir das Leben leichter?",en:"What three inventions make your life easier?"},
+  {id:107,pkg:1,de:"'Dürfen Vegetarier Schmetterlinge im Bauch haben?' – Welche absurde Frage beschäftigt dich?",en:"'Can vegetarians have butterflies in their stomach?' – What absurd question occupies your mind?"},
+  {id:108,pkg:1,de:"Was war dein unvergesslichster Kuss?",en:"What was your most unforgettable kiss?"},
+  {id:109,pkg:1,de:"'Sie haben eine Lücke im Lebenslauf.' – Welches Abenteuer wäre diese Lücke wert?",en:"'You have a gap in your résumé.' – What adventure would be worth that gap?"},
+  {id:110,pkg:1,de:"'Natürlich führe ich Selbstgespräche. Manchmal brauche ich eben professionellen Rat.' – Was ist der beste Rat, den du dir selbst gegeben hast?",en:"'Of course I talk to myself. Sometimes I just need professional advice.' – What's the best advice you've given yourself?"},
+  {id:111,pkg:1,de:"Was war das Lustigste, das du je auf einer Reise erlebt hast?",en:"What was the funniest thing you ever experienced on a trip?"},
+  {id:112,pkg:1,de:"Welche drei Dinge würdest du auf eine einsame Insel mitnehmen – und warum genau diese?",en:"What three things would you take to a desert island – and why exactly those?"},
+  {id:113,pkg:1,de:"Was war deine beste spontane Entscheidung?",en:"What was your best spontaneous decision?"},
+  {id:114,pkg:1,de:"Was war der beste Witz, den du je gehört hast?",en:"What was the best joke you ever heard?"},
+  {id:115,pkg:1,de:"Was war dein schönstes Missverständnis?",en:"What was your most amusing misunderstanding?"},
+  {id:116,pkg:1,de:"Welche drei Lebensmittel könntest du jeden Tag essen – ohne sie jemals leid zu werden?",en:"What three foods could you eat every day without ever getting tired of them?"},
+  {id:117,pkg:1,de:"Was war die beste Überraschung in deinem Leben?",en:"What was the best surprise in your life?"},
+  {id:118,pkg:1,de:"'Manchmal vergesse ich mich bei den Menschen zu bedanken.' – Bei wem möchtest du dich bedanken?",en:"'Sometimes I forget to thank people.' – Who would you like to thank?"},
+  {id:119,pkg:1,de:"Welcher Film oder welche Serie hat dich zuletzt richtig zum Lachen gebracht?",en:"Which movie or series last made you really laugh?"},
+  {id:120,pkg:1,de:"Was war der schönste Zufall in deinem Leben?",en:"What was the most beautiful coincidence in your life?"},
+  {id:121,pkg:1,de:"Wenn du eine Superkraft hättest – welche wäre es und wofür würdest du sie nutzen?",en:"If you had a superpower – what would it be and what would you use it for?"},
+  {id:122,pkg:1,de:"Was war dein schönstes 'Ich hab's dir ja gesagt!'-Erlebnis?",en:"What was your best 'I told you so!' moment?"},
+  {id:123,pkg:1,de:"Welche Kleinigkeit macht dich jeden Tag glücklich?",en:"What small thing makes you happy every day?"},
+  {id:124,pkg:1,de:"Was war das Beste, das dir je ein fremder Mensch gesagt hat?",en:"What was the nicest thing a stranger ever said to you?"},
+  {id:125,pkg:1,de:"'Das kannste schon so machen, aber dann isses halt Kacke!' – Wo hast du gemerkt, dass es sich lohnt, etwas richtig zu machen?",en:"'You can do it that way – but then it's just half-baked.' – When did you realize it pays off to do something properly?"},
+  // PAKET 2 (25 Karten)
+  {id:201,pkg:2,de:"Was war der schönste Ort, den du bisher gesehen hast?",en:"What is the most beautiful place you've ever seen?"},
+  {id:202,pkg:2,de:"Welche Begegnung hat dein Leben auf eine schöne Weise bereichert?",en:"Which encounter enriched your life in a beautiful way?"},
+  {id:203,pkg:2,de:"Was war der Moment, in dem du dich am lebendigsten gefühlt hast?",en:"What was the moment you felt most alive?"},
+  {id:204,pkg:2,de:"Welche Kindheitserinnerung macht dich noch heute glücklich?",en:"Which childhood memory still makes you happy today?"},
+  {id:205,pkg:2,de:"Was war das schönste Kompliment, das du je bekommen hast?",en:"What was the nicest compliment you've ever received?"},
+  {id:206,pkg:2,de:"Welchen Moment würdest du gerne noch einmal erleben?",en:"Which moment would you love to relive?"},
+  {id:207,pkg:2,de:"Was war das schönste Geschenk, das du je bekommen hast – egal ob materiell oder nicht?",en:"What was the most meaningful gift you ever received – material or otherwise?"},
+  {id:208,pkg:2,de:"Welche Reise hat dich am stärksten beeindruckt?",en:"Which trip impressed you the most?"},
+  {id:209,pkg:2,de:"Was war der schönste Abend in deinem Leben?",en:"What was the most beautiful evening of your life?"},
+  {id:210,pkg:2,de:"Welches Buch, welcher Film oder welche Musik hat dich tief berührt?",en:"Which book, movie or piece of music moved you deeply?"},
+  {id:211,pkg:2,de:"Was war der stolzeste Moment in deinem Leben?",en:"What was the proudest moment of your life?"},
+  {id:212,pkg:2,de:"Welche Tradition oder welches Ritual macht dir besondere Freude?",en:"Which tradition or ritual brings you special joy?"},
+  {id:213,pkg:2,de:"Was war das Schönste, das du je für jemanden getan hast?",en:"What was the most beautiful thing you've ever done for someone?"},
+  {id:214,pkg:2,de:"Welcher Geruch oder welches Geräusch weckt in dir sofort eine schöne Erinnerung?",en:"Which smell or sound instantly brings back a beautiful memory?"},
+  {id:215,pkg:2,de:"Was war der lustigste gemeinsame Moment mit deinen besten Freunden?",en:"What was the funniest shared moment with your best friends?"},
+  {id:216,pkg:2,de:"Welches Abenteuer hast du erlebt, das du nie vergessen wirst?",en:"What adventure have you had that you'll never forget?"},
+  {id:217,pkg:2,de:"Was war der schönste Morgen in deinem Leben?",en:"What was the most beautiful morning of your life?"},
+  {id:218,pkg:2,de:"Welche Begegnung mit der Natur hat dich tief beeindruckt?",en:"Which encounter with nature deeply impressed you?"},
+  {id:219,pkg:2,de:"Was war das Schönste, das ein Kind je zu dir gesagt hat?",en:"What was the most beautiful thing a child ever said to you?"},
+  {id:220,pkg:2,de:"Welcher spontane Moment wurde zur schönsten Erinnerung?",en:"Which spontaneous moment became your most beautiful memory?"},
+  {id:221,pkg:2,de:"Was war das schönste Fest oder die schönste Feier in deinem Leben?",en:"What was the most beautiful celebration or party of your life?"},
+  {id:222,pkg:2,de:"Welche Kleinigkeit hat dich einmal tief berührt?",en:"What small thing once touched you deeply?"},
+  {id:223,pkg:2,de:"Was war der schönste Moment mit einem Tier?",en:"What was your most beautiful moment with an animal?"},
+  {id:224,pkg:2,de:"Welcher Mensch hat dein Leben auf die schönste Art bereichert?",en:"Who has enriched your life in the most beautiful way?"},
+  {id:225,pkg:2,de:"Was war der Moment, in dem du wusstest: Das war genau richtig.",en:"What was the moment when you knew: that was exactly right."},
+  // PAKET 3 (25 Karten)
+  {id:301,pkg:3,de:"Was ist das Erste, worüber du morgens lächelst?",en:"What's the first thing you smile about in the morning?"},
+  {id:302,pkg:3,de:"Welches Hobby macht dir so viel Freude, dass du die Zeit vergisst?",en:"Which hobby brings you so much joy that you lose track of time?"},
+  {id:303,pkg:3,de:"Was ist dein liebstes Ritual, das dir Energie gibt?",en:"What's your favorite ritual that gives you energy?"},
+  {id:304,pkg:3,de:"Welche Art von Musik bringt dich sofort in gute Stimmung?",en:"What kind of music instantly puts you in a good mood?"},
+  {id:305,pkg:3,de:"Was ist das Schönste an deinem Alltag?",en:"What's the most beautiful thing about your everyday life?"},
+  {id:306,pkg:3,de:"Welches Essen bereitet dir die größte Freude?",en:"Which food brings you the greatest joy?"},
+  {id:307,pkg:3,de:"Was tust du, wenn du dich richtig verwöhnen möchtest?",en:"What do you do when you really want to treat yourself?"},
+  {id:308,pkg:3,de:"Welches Buch oder welcher Film hat dich zuletzt begeistert?",en:"Which book or movie last excited you?"},
+  {id:309,pkg:3,de:"Was ist der schönste Ort in deiner Nähe, an den du gerne gehst?",en:"What's the most beautiful place near you that you love to visit?"},
+  {id:310,pkg:3,de:"Welche kleine Geste macht dich glücklich, wenn sie jemand dir gegenüber zeigt?",en:"Which small gesture makes you happy when someone shows it to you?"},
+  {id:311,pkg:3,de:"Was ist das Schönste an deiner Lieblingszeit des Jahres?",en:"What's the most beautiful thing about your favorite time of year?"},
+  {id:312,pkg:3,de:"Welche Art von Gesprächen gibt dir am meisten Energie?",en:"What kind of conversations give you the most energy?"},
+  {id:313,pkg:3,de:"Was macht einen perfekten Sonntag für dich aus?",en:"What makes a perfect Sunday for you?"},
+  {id:314,pkg:3,de:"Welches Projekt oder welche Aufgabe macht dir besonders viel Spaß?",en:"Which project or task brings you the most fun?"},
+  {id:315,pkg:3,de:"Was ist dein liebster Weg, um dich zu entspannen?",en:"What's your favorite way to relax?"},
+  {id:316,pkg:3,de:"Welche kreative Tätigkeit bereitet dir Freude?",en:"Which creative activity brings you joy?"},
+  {id:317,pkg:3,de:"Was ist das Schönste daran, mit Menschen zusammen zu sein, die du liebst?",en:"What's the most beautiful thing about being with people you love?"},
+  {id:318,pkg:3,de:"Welcher Sport oder welche Bewegung macht dir am meisten Spaß?",en:"Which sport or physical activity do you enjoy most?"},
+  {id:319,pkg:3,de:"Was ist das Schönste an deiner Arbeit oder deiner Hauptbeschäftigung?",en:"What's the most beautiful thing about your work or main occupation?"},
+  {id:320,pkg:3,de:"Welches Tier würdest du am liebsten einmal erleben – und warum?",en:"Which animal would you most love to experience – and why?"},
+  {id:321,pkg:3,de:"Was ist dein liebster Tagesabschnitt – und was machst du dann am liebsten?",en:"What's your favorite part of the day – and what do you love to do then?"},
+  {id:322,pkg:3,de:"Welche Naturerfahrung gibt dir am meisten Freude?",en:"Which experience in nature brings you the most joy?"},
+  {id:323,pkg:3,de:"Was ist das Schönste daran, wenn du etwas Neues lernst?",en:"What's the most beautiful thing about learning something new?"},
+  {id:324,pkg:3,de:"Welcher Geruch verbindest du mit purer Freude?",en:"Which smell do you associate with pure joy?"},
+  {id:325,pkg:3,de:"Was ist das Einfachste, das dich glücklich macht?",en:"What's the simplest thing that makes you happy?"},
+  // PAKET 4 (25 Karten)
+  {id:401,pkg:4,de:"Was ist deine größte Stärke im Umgang mit anderen Menschen?",en:"What is your greatest strength in dealing with other people?"},
+  {id:402,pkg:4,de:"Welcher Wert ist dir in deinem Leben am wichtigsten?",en:"Which value is most important to you in your life?"},
+  {id:403,pkg:4,de:"Was schätzen andere an dir am meisten – laut dem, was sie dir sagen?",en:"What do others appreciate most about you – according to what they tell you?"},
+  {id:404,pkg:4,de:"Welche Fähigkeit hast du dir selbst beigebracht, auf die du besonders stolz bist?",en:"Which skill did you teach yourself that you're especially proud of?"},
+  {id:405,pkg:4,de:"Was ist das Mutigste, das du je getan hast?",en:"What's the bravest thing you've ever done?"},
+  {id:406,pkg:4,de:"Welcher Mensch hat dich am stärksten geprägt – und was hast du von ihm gelernt?",en:"Who has shaped you the most – and what did you learn from them?"},
+  {id:407,pkg:4,de:"Was kannst du besonders gut, das andere oft bewundern?",en:"What can you do particularly well that others often admire?"},
+  {id:408,pkg:4,de:"Welche Entscheidung in deinem Leben war die Richtige – und wie weißt du das?",en:"Which decision in your life was the right one – and how do you know?"},
+  {id:409,pkg:4,de:"Was gibt dir innere Stärke, wenn es darauf ankommt?",en:"What gives you inner strength when it matters?"},
+  {id:410,pkg:4,de:"Welche Gewohnheit hilft dir, jeden Tag dein Bestes zu geben?",en:"Which habit helps you give your best every day?"},
+  {id:411,pkg:4,de:"Was bist du besonders gut darin, anderen zu geben oder zu ermöglichen?",en:"What are you especially good at giving or enabling for others?"},
+  {id:412,pkg:4,de:"Welche deiner Überzeugungen macht dich zu einem besseren Menschen?",en:"Which of your beliefs makes you a better person?"},
+  {id:413,pkg:4,de:"Was macht dich als Freund, Partner oder Kollegen besonders wertvoll?",en:"What makes you especially valuable as a friend, partner or colleague?"},
+  {id:414,pkg:4,de:"Welche Lektion hast du gelernt, die dir heute im Alltag hilft?",en:"Which lesson have you learned that helps you in everyday life today?"},
+  {id:415,pkg:4,de:"Was ist das Schönste an deiner Art, die Welt zu sehen?",en:"What's the most beautiful thing about your way of seeing the world?"},
+  {id:416,pkg:4,de:"Welche Eigenschaft magst du an dir selbst am meisten?",en:"Which quality do you like most about yourself?"},
+  {id:417,pkg:4,de:"Was hast du einmal durchgehalten – und was hat dir das gebracht?",en:"What did you once persevere through – and what did it bring you?"},
+  {id:418,pkg:4,de:"Welchen positiven Einfluss hast du auf die Menschen um dich herum?",en:"What positive influence do you have on the people around you?"},
+  {id:419,pkg:4,de:"Was liebst du an deiner eigenen Art zu denken?",en:"What do you love about your own way of thinking?"},
+  {id:420,pkg:4,de:"Welche Rolle spielst du in deinen engsten Beziehungen – und was macht dich dort einzigartig?",en:"What role do you play in your closest relationships – and what makes you unique there?"},
+  {id:421,pkg:4,de:"Was ist das Schönste an deiner persönlichen Geschichte?",en:"What's the most beautiful thing about your personal story?"},
+  {id:422,pkg:4,de:"Welche Stärke hast du erst mit der Zeit in dir entdeckt?",en:"Which strength did you discover in yourself only over time?"},
+  {id:423,pkg:4,de:"Was macht dich stolz, wenn du auf dein bisheriges Leben zurückblickst?",en:"What makes you proud when you look back on your life so far?"},
+  {id:424,pkg:4,de:"Welche Werte teilst du mit den Menschen, die dir am nächsten sind?",en:"Which values do you share with the people closest to you?"},
+  {id:425,pkg:4,de:"Was ist das Besonderste an dir – das, was kein anderer Mensch genau so hat?",en:"What's the most special thing about you – the thing no other person has in quite the same way?"},
+  // PAKET 5 (25 Karten)
+  {id:501,pkg:5,de:"Welches Projekt begeistert dich gerade am meisten?",en:"Which project excites you the most right now?"},
+  {id:502,pkg:5,de:"Was ist der nächste konkrete Schritt, den du in den nächsten 7 Tagen tun kannst?",en:"What's the next concrete step you can take in the next 7 days?"},
+  {id:503,pkg:5,de:"Welchen Traum verfolgst du gerade aktiv?",en:"Which dream are you actively pursuing right now?"},
+  {id:504,pkg:5,de:"Was lernst du gerade Neues – und warum macht es dir Freude?",en:"What are you learning right now – and why does it bring you joy?"},
+  {id:505,pkg:5,de:"Welches Ziel willst du bis Ende des Jahres erreicht haben?",en:"Which goal do you want to have achieved by the end of the year?"},
+  {id:506,pkg:5,de:"Was tust du gerade, das dich in die richtige Richtung bringt?",en:"What are you doing right now that's moving you in the right direction?"},
+  {id:507,pkg:5,de:"Welche neue Gewohnheit möchtest du aufbauen – und warum ist sie dir wichtig?",en:"Which new habit do you want to build – and why is it important to you?"},
+  {id:508,pkg:5,de:"Was ist dein nächstes Abenteuer – groß oder klein?",en:"What's your next adventure – big or small?"},
+  {id:509,pkg:5,de:"Welche Fähigkeit willst du in den nächsten 12 Monaten entwickeln?",en:"Which skill do you want to develop in the next 12 months?"},
+  {id:510,pkg:5,de:"Was ist der erste Schritt zu deinem wichtigsten Ziel – den du heute noch tun kannst?",en:"What's the first step toward your most important goal – one you can take today?"},
+  {id:511,pkg:5,de:"Welches kreative Projekt liegt dir am Herzen?",en:"Which creative project is close to your heart?"},
+  {id:512,pkg:5,de:"Was möchtest du in den nächsten 5 Jahren in deinem Leben aufgebaut haben?",en:"What do you want to have built in your life in the next 5 years?"},
+  {id:513,pkg:5,de:"Welche Reise planst du – und was freust du dich am meisten darauf?",en:"What trip are you planning – and what are you most looking forward to?"},
+  {id:514,pkg:5,de:"Was machst du gerade, das in einem Jahr einen großen Unterschied machen wird?",en:"What are you doing right now that will make a big difference in a year?"},
+  {id:515,pkg:5,de:"Welches Buch oder welchen Kurs willst du als nächstes durcharbeiten?",en:"Which book or course do you want to work through next?"},
+  {id:516,pkg:5,de:"Was ist das Mutigste, das du dir für deine Zukunft vorstellst?",en:"What's the boldest thing you envision for your future?"},
+  {id:517,pkg:5,de:"Welche Verbindung möchtest du in deinem Leben stärken – und was ist dein nächster Schritt?",en:"Which connection in your life do you want to strengthen – and what's your next step?"},
+  {id:518,pkg:5,de:"Was ist das Projekt, das du schon lange angehen wolltest – und wann fängst du an?",en:"What's the project you've wanted to tackle for a long time – and when will you start?"},
+  {id:519,pkg:5,de:"Welche Gewohnheit hast du dieses Jahr bereits erfolgreich aufgebaut?",en:"Which habit have you already successfully built this year?"},
+  {id:520,pkg:5,de:"Was ist die schönste Investition, die du gerade in dich selbst machst?",en:"What's the most beautiful investment you're currently making in yourself?"},
+  {id:521,pkg:5,de:"Welche Veränderung in deinem Leben freust du dich am meisten darauf?",en:"Which change in your life are you most looking forward to?"},
+  {id:522,pkg:5,de:"Was tust du gerade, das deinen Alltag schöner macht?",en:"What are you doing right now that's making your everyday life more beautiful?"},
+  {id:523,pkg:5,de:"Welches Ziel verfolgst du mit der größten Leidenschaft?",en:"Which goal are you pursuing with the greatest passion?"},
+  {id:524,pkg:5,de:"Was ist der konkreteste Plan, den du gerade hast?",en:"What's the most concrete plan you currently have?"},
+  {id:525,pkg:5,de:"Welchen positiven Einfluss willst du in den nächsten Jahren auf andere haben?",en:"What positive influence do you want to have on others in the coming years?"},
+  // PAKET 6 (25 Karten)
+  {id:601,pkg:6,de:"Welcher Mensch in deinem Leben inspiriert dich am meisten – und warum?",en:"Who in your life inspires you the most – and why?"},
+  {id:602,pkg:6,de:"Was ist das Schönste, das dir jemand je gesagt hat?",en:"What's the most beautiful thing someone has ever said to you?"},
+  {id:603,pkg:6,de:"Welchem Menschen möchtest du öfter danken – und was genau schätzt du an ihm?",en:"To whom would you like to say thank you more often – and what exactly do you appreciate about them?"},
+  {id:604,pkg:6,de:"Was macht deine beste Freundschaft so besonders?",en:"What makes your best friendship so special?"},
+  {id:605,pkg:6,de:"Welche Person hat dir eine Fähigkeit beigebracht, die dein Leben verändert hat?",en:"Which person taught you a skill that changed your life?"},
+  {id:606,pkg:6,de:"Was liebst du an den Menschen, mit denen du am meisten Zeit verbringst?",en:"What do you love about the people you spend the most time with?"},
+  {id:607,pkg:6,de:"Welchen Einfluss hat jemand auf dich gehabt, der dir bis heute hilft?",en:"What influence has someone had on you that still helps you today?"},
+  {id:608,pkg:6,de:"Was ist das Schönste, das du für jemanden tun kannst, ohne Worte?",en:"What's the most beautiful thing you can do for someone without words?"},
+  {id:609,pkg:6,de:"Welcher Mensch hat dir geholfen, das Beste aus dir herauszuholen?",en:"Who has helped you bring out the best in yourself?"},
+  {id:610,pkg:6,de:"Was ist das Wertvollste, das du von einem Freund oder einer Freundin gelernt hast?",en:"What's the most valuable thing you've learned from a friend?"},
+  {id:611,pkg:6,de:"Wer in deinem Leben macht dich einfach durch seine Gegenwart glücklich?",en:"Who in your life makes you happy simply by being present?"},
+  {id:612,pkg:6,de:"Was ist das Schönste, das du gemeinsam mit einem anderen Menschen erlebt hast?",en:"What's the most beautiful thing you've experienced together with another person?"},
+  {id:613,pkg:6,de:"Welcher Mensch hat dich am stärksten zum Lachen gebracht?",en:"Who has made you laugh the hardest?"},
+  {id:614,pkg:6,de:"Was schätzt du an einem bestimmten Menschen so sehr, dass es dich inspiriert, selbst so zu sein?",en:"What do you appreciate so much about a certain person that it inspires you to be that way yourself?"},
+  {id:615,pkg:6,de:"Welche Verbindung in deinem Leben gibt dir die meiste Kraft?",en:"Which connection in your life gives you the most strength?"},
+  {id:616,pkg:6,de:"Was ist das Schönste, das du jemandem gegeben hast – egal ob Zeit, Energie oder Aufmerksamkeit?",en:"What's the most beautiful thing you've given someone – whether time, energy or attention?"},
+  {id:617,pkg:6,de:"Welcher Mensch hat dich zu einer besseren Version von dir selbst gemacht?",en:"Who has made you a better version of yourself?"},
+  {id:618,pkg:6,de:"Was liebst du an der Art, wie ein bestimmter Mensch die Welt sieht?",en:"What do you love about the way a certain person sees the world?"},
+  {id:619,pkg:6,de:"Welche Begegnung hat dein Herz auf eine schöne Art berührt?",en:"Which encounter touched your heart in a beautiful way?"},
+  {id:620,pkg:6,de:"Was ist das Schönste an der Gemeinschaft, zu der du gehörst?",en:"What's the most beautiful thing about the community you belong to?"},
+  {id:621,pkg:6,de:"Welchem Menschen vertraust du blind – und was macht dieses Vertrauen so wertvoll?",en:"Who do you trust completely – and what makes that trust so valuable?"},
+  {id:622,pkg:6,de:"Was ist das Schönste, das du einem Kind weitergegeben hast?",en:"What's the most beautiful thing you've passed on to a child?"},
+  {id:623,pkg:6,de:"Welche Freundschaft hat sich im Laufe der Zeit zu etwas noch Besonderem entwickelt?",en:"Which friendship has developed into something even more special over time?"},
+  {id:624,pkg:6,de:"Was ist das Schönste an der Verbindung zwischen dir und dem Menschen, dem du am nächsten bist?",en:"What's the most beautiful thing about the connection between you and the person you're closest to?"},
+  {id:625,pkg:6,de:"Welcher Mensch hat dich dazu gebracht, an dich selbst zu glauben?",en:"Who made you believe in yourself?"},
+  // PAKET 7 (25 Karten)
+  {id:701,pkg:7,de:"'Das Leben ist das, was passiert, während du andere Pläne machst.' – Welcher ungeplante Moment war der schönste?",en:"'Life is what happens while you're busy making other plans.' – What unplanned moment was the most beautiful?"},
+  {id:702,pkg:7,de:"'Man sieht nur mit dem Herzen gut.' – Wann hast du mit dem Herzen gesehen?",en:"'One sees clearly only with the heart.' – When did you see with your heart?"},
+  {id:703,pkg:7,de:"'Glück ist das einzige, das sich verdoppelt, wenn man es teilt.' – Mit wem teilst du dein Glück am liebsten?",en:"'Happiness is the only thing that doubles when you share it.' – With whom do you most love to share your happiness?"},
+  {id:704,pkg:7,de:"'Die beste Zeit für einen Neuanfang ist jetzt.' – Welchen Neuanfang hast du gewagt?",en:"'The best time for a new beginning is now.' – What new beginning have you dared to make?"},
+  {id:705,pkg:7,de:"'Das Geheimnis des Glücks liegt nicht im Besitz, sondern im Geben.' – Was hast du gegeben, das dich glücklich gemacht hat?",en:"'The secret of happiness lies not in possession but in giving.' – What have you given that made you happy?"},
+  {id:706,pkg:7,de:"'Sei du selbst. Alle anderen gibt es schon.' – Was macht dich einzigartig?",en:"'Be yourself. Everyone else is already taken.' – What makes you unique?"},
+  {id:707,pkg:7,de:"'Das Leben ist nicht gerecht – aber es ist trotzdem schön.' – Was ist das Schönste an dieser Tatsache?",en:"'Life is not fair – but it's still beautiful.' – What's most beautiful about that fact?"},
+  {id:708,pkg:7,de:"'Die Zukunft gehört denen, die an die Schönheit ihrer Träume glauben.' – Was ist dein Traum, an den du glaubst?",en:"'The future belongs to those who believe in the beauty of their dreams.' – What dream do you believe in?"},
+  {id:709,pkg:7,de:"'Das Glück deines Lebens hängt von der Beschaffenheit deiner Gedanken ab.' – Welcher Gedanke macht dich am glücklichsten?",en:"'The happiness of your life depends upon the quality of your thoughts.' – Which thought makes you happiest?"},
+  {id:710,pkg:7,de:"'Wenn dir nicht gefällt, wo du bist, beweg dich. Du bist kein Baum.' – Wohin hast du dich bewegt?",en:"'If you don't like where you are, move. You are not a tree.' – Where have you moved yourself?"},
+  {id:711,pkg:7,de:"'Die schönsten Dinge im Leben sind nicht die Dinge.' – Was ist für dich das Schönste, das kein Ding ist?",en:"'The best things in life aren't things.' – What's the most beautiful non-thing in your life?"},
+  {id:712,pkg:7,de:"'Wer mit der Masse geht, wird üblicherweise nicht weiter als die Masse kommen.' – Wo gehst du deinen eigenen Weg?",en:"'Those who follow the crowd usually go no further than the crowd.' – Where do you walk your own path?"},
+  {id:713,pkg:7,de:"'Enttäuschungen sind nur Haltestellen in unserem Leben.' – Wo bist du umgestiegen – und wohin hat es dich geführt?",en:"'Disappointments are just stops along the way.' – Where did you transfer – and where did it take you?"},
+  {id:714,pkg:7,de:"'Die größte Entdeckung meiner Generation ist, dass ein Mensch seine Lebensumstände durch seine innere Einstellung verändern kann.' – Welche Einstellung hat dein Leben verbessert?",en:"'The greatest discovery of my generation is that a person can alter his life by altering his attitude.' – Which attitude has improved your life?"},
+  {id:715,pkg:7,de:"'Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.' – Was siehst du, das andere übersehen?",en:"'One sees clearly only with the heart. What is essential is invisible to the eye.' – What do you see that others miss?"},
+  {id:716,pkg:7,de:"'Lebe so, als ob du morgen sterben würdest. Lerne so, als ob du ewig leben würdest.' – Was würdest du heute lernen?",en:"'Live as if you were to die tomorrow. Learn as if you were to live forever.' – What would you learn today?"},
+  {id:717,pkg:7,de:"'Das Leben ist zu kurz für später.' – Was hast du heute getan, das du nicht auf später verschoben hast?",en:"'Life is too short for later.' – What did you do today that you didn't put off?"},
+  {id:718,pkg:7,de:"'In jedem Augenblick steckt eine Chance.' – Welche Chance hast du ergriffen?",en:"'In every moment there's an opportunity.' – Which opportunity have you seized?"},
+  {id:719,pkg:7,de:"'Der einzige Weg, großartige Arbeit zu leisten, ist, zu lieben, was man tut.' – Was liebst du an dem, was du tust?",en:"'The only way to do great work is to love what you do.' – What do you love about what you do?"},
+  {id:720,pkg:7,de:"'Träume nicht dein Leben, sondern lebe deinen Traum.' – Was lebst du gerade aktiv?",en:"'Don't dream your life, live your dream.' – What are you actively living right now?"},
+  {id:721,pkg:7,de:"'Das Beste, was du für andere tun kannst, ist, nicht ihre Ressourcen zu teilen, sondern ihr Eigenes zu enthüllen.' – Was hast du in jemandem enthüllt?",en:"'The best thing you can do for others is not to share your riches but to reveal their own.' – What have you revealed in someone?"},
+  {id:722,pkg:7,de:"'Tue jeden Tag etwas, wovor du dich fürchtest.' – Was hast du mutig getan?",en:"'Do one thing every day that scares you.' – What brave thing have you done?"},
+  {id:723,pkg:7,de:"'Die Reise von tausend Meilen beginnt mit dem ersten Schritt.' – Welcher erste Schritt hat alles verändert?",en:"'A journey of a thousand miles begins with a single step.' – Which first step changed everything?"},
+  {id:724,pkg:7,de:"'Kreativität ist Intelligenz, die Spaß hat.' – Wann machst du dir deinen größten Spaß beim Denken?",en:"'Creativity is intelligence having fun.' – When do you have the most fun thinking?"},
+  {id:725,pkg:7,de:"'Es sind nicht die Jahre in deinem Leben, die zählen. Es ist das Leben in deinen Jahren.' – Was lebt in deinen Jahren?",en:"'In the end, it's not the years in your life that count. It's the life in your years.' – What's the life in your years?"},
+  // PAKET 8 (25 Karten)
+  {id:801,pkg:8,de:"'Wenn ich mal vermisst werde, druckt mein Bild auf Weinflaschenetiketten.' – Was wäre dein Etikett?",en:"'If I go missing, put my face on wine bottles.' – What would your label say?"},
+  {id:802,pkg:8,de:"'Ich hätte jetzt gerne Sex oder eine Umarmung. Ein Kaffee ist aber auch toll.' – Was ist für dich die schönste Form von Nähe?",en:"'I'd love some intimacy or a hug right now. But a coffee works too.' – What's the most beautiful form of closeness for you?"},
+  {id:803,pkg:8,de:"'Küssen verbraucht zwischen 7 und 700 Kalorien.' – Was war dein unvergesslichster Kuss?",en:"'Kissing burns between 7 and 700 calories.' – What was your most unforgettable kiss?"},
+  {id:804,pkg:8,de:"'Mein Zahnarzt hat gesagt, dass ich eine Krone brauche. Endlich jemand, der mich versteht.' – Wann hast du dich richtig verstanden gefühlt?",en:"'My dentist said I need a crown. Finally someone who gets me.' – When did you feel truly understood?"},
+  {id:805,pkg:8,de:"'Haie töten 12 Menschen jährlich. Menschen töten 11.000 Haie jährlich.' – Welche scheinbare Gefahr ist in Wirklichkeit gar nicht so groß?",en:"'Sharks kill 12 people a year. People kill 11,000 sharks a year.' – What apparent danger is actually not so big?"},
+  {id:806,pkg:8,de:"'Leider leben viele Menschen in Armut. Sie fahren Autos ohne Dach.' – Welchen Luxus schätzt du am meisten?",en:"'Unfortunately many people live in poverty. They drive cars without roofs.' – What luxury do you appreciate most?"},
+  {id:807,pkg:8,de:"'Das kannste schon so machen, aber dann isses halt Kacke!' – Wo hast du gemerkt, dass es sich lohnt, etwas richtig zu machen?",en:"'You can do it that way – but then it's just half-baked.' – When did you realize it pays to do something properly?"},
+  {id:808,pkg:8,de:"'Dumme Gedanken hat jeder. Die Kunst besteht darin, im entscheidenden Moment die Fresse zu halten.' – Wann hat dir Zurückhaltung etwas gebracht?",en:"'Everyone has dumb thoughts. The art is keeping your mouth shut at the crucial moment.' – When did holding back work in your favor?"},
+  {id:809,pkg:8,de:"'Natürlich führe ich Selbstgespräche. Manchmal brauche ich eben professionellen Rat.' – Was ist der beste Rat, den du dir selbst gegeben hast?",en:"'Of course I talk to myself. Sometimes I just need professional advice.' – What's the best advice you've given yourself?"},
+  {id:810,pkg:8,de:"Wenn du ein Tier wärst – welches wärst du und warum ausgerechnet dieses?",en:"If you were an animal – which would you be and why exactly that one?"},
+  {id:811,pkg:8,de:"'Die schönsten Dinge im Leben sind nicht die Dinge.' – Was ist für dich das Wertvollste, das kein Ding ist?",en:"'The best things in life aren't things.' – What's the most valuable non-thing in your life?"},
+  {id:812,pkg:8,de:"Was war die beste spontane Entscheidung, die du je getroffen hast?",en:"What was the best spontaneous decision you ever made?"},
+  {id:813,pkg:8,de:"Wenn du morgen einen komplett neuen Job anfangen könntest – welcher wäre das?",en:"If you could start a completely new job tomorrow – what would it be?"},
+  {id:814,pkg:8,de:"Was würdest du tun, wenn du wüsstest, dass du nicht scheitern kannst?",en:"What would you do if you knew you couldn't fail?"},
+  {id:815,pkg:8,de:"Was war die schönste Überraschung in deinem Leben?",en:"What was the most beautiful surprise in your life?"},
+  {id:816,pkg:8,de:"Wenn du eine Weltrekord aufstellen könntest – welchen?",en:"If you could set a world record – which one?"},
+  {id:817,pkg:8,de:"Welcher Film oder welche Serie hat dich zuletzt richtig zum Lachen gebracht?",en:"Which movie or series last made you really laugh?"},
+  {id:818,pkg:8,de:"Was war der schönste Zufall in deinem Leben?",en:"What was the most beautiful coincidence in your life?"},
+  {id:819,pkg:8,de:"Wenn du eine Superkraft hättest – welche wäre es und wofür würdest du sie nutzen?",en:"If you had a superpower – what would it be and how would you use it?"},
+  {id:820,pkg:8,de:"Was war dein schönstes 'Ich hab's dir ja gesagt!'-Erlebnis?",en:"What was your best 'I told you so!' moment?"},
+  {id:821,pkg:8,de:"Welche Kleinigkeit macht dich jeden Tag glücklich?",en:"What small thing makes you happy every day?"},
+  {id:822,pkg:8,de:"Was war das Beste, das dir je ein fremder Mensch gesagt hat?",en:"What was the nicest thing a stranger ever said to you?"},
+  {id:823,pkg:8,de:"Wenn du eine TV-Show moderieren könntest – welche?",en:"If you could host a TV show – which one?"},
+  {id:824,pkg:8,de:"Was war das Lustigste, das du je auf einer Reise erlebt hast?",en:"What was the funniest thing you ever experienced traveling?"},
+  {id:825,pkg:8,de:"Welche drei Dinge würdest du auf eine einsame Insel mitnehmen – und warum genau diese?",en:"What three things would you take to a desert island – and why exactly those?"},
+
+  // PAKET 9 – "Offen für Neues?" (25 Karten) – KOSTENLOS
+  // Suchrichtung 1: Neugier & Aufmerksamkeit
+  {id:901,pkg:9,de:"Mit welchem Thema kannst du dich stundenlang befassen, ohne dass es dir langweilig wird – und was verrät das Schöne daran über dich?",en:"What topic can you spend hours on without getting bored – and what does that beautiful quality reveal about you?"},
+  {id:902,pkg:9,de:"Worüber würdest du spontan einen Vortrag halten können, ohne jede Vorbereitung, der für andere erbauend wirkt?",en:"What topic could you spontaneously give an uplifting talk about, without any preparation?"},
+  {id:903,pkg:9,de:"Welches nützliche Thema beschäftigt dich gerade so sehr, dass du mit jedem darüber sprechen willst?",en:"What useful topic occupies you so much right now that you want to talk to everyone about it?"},
+  {id:904,pkg:9,de:"Was hast du zuletzt gelernt, das deine Sicht auf etwas Vertrautes zum Positiven verändert hat?",en:"What did you recently learn that changed your view of something familiar – for the better?"},
+  {id:905,pkg:9,de:"Welches Gespräch hat dich zuletzt so gefesselt, dass du die Zeit vergessen hast?",en:"Which conversation recently captivated you so much that you lost track of time?"},
+  {id:906,pkg:9,de:"Was wolltest du als Kind unbedingt verstehen – und verfolgst du diese Neugier heute noch irgendwie?",en:"What did you desperately want to understand as a child – and do you still pursue that curiosity somehow today?"},
+  // Suchrichtung 2: Natürlicher Fluss
+  {id:907,pkg:9,de:"Welche Fähigkeit beherrscht du heute so gut, dass du selbst überrascht bist, wie natürlich sie sich anfühlt?",en:"Which skill do you master so well today that you're surprised by how natural it feels?"},
+  {id:908,pkg:9,de:"Womit verbringst du Zeit, bei der du danach mehr Energie hast als vorher?",en:"What do you spend time on that leaves you with more energy than before?"},
+  {id:909,pkg:9,de:"In welchem Moment des Tages bist du am charakterstärksten?",en:"In which moment of the day are you at your strongest character?"},
+  {id:910,pkg:9,de:"Was tust du, ohne darüber nachzudenken – und das andere als besondere Gabe in dir sehen?",en:"What do you do without thinking – and that others see as a special gift in you?"},
+  {id:911,pkg:9,de:"Was hilft dir, bei Herausforderungen die Leichtigkeit zu bewahren?",en:"What helps you maintain lightness when facing challenges?"},
+  {id:912,pkg:9,de:"Was würdest du tun, wenn du einen ganzen Tag keine Pflichten hättest – und was verrät das über dich?",en:"What would you do if you had a whole day with no obligations – and what does that reveal about you?"},
+  // Suchrichtung 3: Organische Transformation
+  {id:913,pkg:9,de:"Welche Überzeugung hast du in den letzten Jahren so verändert, dass du heute stolz darauf bist?",en:"Which belief have you changed in recent years in a way that makes you proud today?"},
+  {id:914,pkg:9,de:"Was schätzt du heute an dir selbst, das du vor fünf Jahren noch nicht so klar gesehen hast?",en:"What do you appreciate about yourself today that you didn't see so clearly five years ago?"},
+  {id:915,pkg:9,de:"Welchen Ratschlag hast du lange ignoriert – und wo hast du mit einem Lächeln gemerkt, dass er goldrichtig war? Und wo hast du festgestellt, dass deine Ignoranz goldrichtig war?",en:"Which advice did you ignore for a long time – and where did you realize with a smile that it was spot on? And where did you find that ignoring it was the right call?"},
+  {id:916,pkg:9,de:"Was tust du heute mit echter Überzeugung, das du früher nur aus Pflicht getan hast?",en:"What do you do today with genuine conviction that you used to do only out of obligation?"},
+  {id:917,pkg:9,de:"Welche kleine Entscheidung hat im Nachhinein alles zum Besseren verändert?",en:"Which small decision changed everything for the better in hindsight?"},
+  {id:918,pkg:9,de:"Was ist das Klügste, das du je von einem Kind gelernt hast?",en:"What is the wisest thing you ever learned from a child?"},
+  {id:919,pkg:9,de:"Du bist stärker als du dachtest. Welche Bereiche meisterst du, die Zeichen dieser Stärke sind?",en:"You are stronger than you thought. Which areas do you master that are signs of this strength?"},
+  // Suchrichtung 4: Transformation durch Begegnung
+  {id:920,pkg:9,de:"Welcher Mensch hat in dir eine Fähigkeit gesehen, bevor du sie selbst erkannt hast?",en:"Who saw a talent in you before you recognized it yourself?"},
+  {id:921,pkg:9,de:"Was hat dir jemand einmal gesagt, das sich wie ein Schlüssel für dich angefühlt hat?",en:"What did someone once say to you that felt like a key unlocking something in you?"},
+  {id:922,pkg:9,de:"Welchem Menschen verdankst du eine Gewohnheit, die dein Leben schöner macht?",en:"Who do you owe a habit to that makes your life more beautiful?"},
+  {id:923,pkg:9,de:"Wer hat dir einmal so zugehört, dass du danach klarer über dich selbst warst?",en:"Who once listened to you so well that you felt clearer about yourself afterward?"},
+  {id:924,pkg:9,de:"Welche Begegnung hat deine Neugier auf etwas geweckt, das du heute liebst?",en:"Which encounter awakened your curiosity for something you love today?"},
+  {id:925,pkg:9,de:"Welche Weisheit hat dir ein Fremder einmal mitgegeben, die du bis heute in dir trägst?",en:"What wisdom did a stranger once share with you that you still carry with you today?"},
+
+  // PAKET 10 – "Stimmt das wirklich?" (25 Karten) – KOSTENLOS
+  // ⚠️ SPRACHHINWEIS: Sprichwörter sind kulturell gebunden – englische Äquivalente
+  // wurden einzeln geprüft und angepasst. NIEMALS direkt übersetzen!
+  {id:1001,pkg:10,de:"'Der frühe Vogel fängt den Wurm – aber auch nur den frühen Wurm.' Wann war Ausschlafen die klügere Entscheidung – und was hast du dadurch gewonnen?",en:"'The early bird catches the worm – but only the early worm.' When was sleeping in the smarter choice – and what did you gain from it?"},
+  {id:1002,pkg:10,de:"'Übung macht den Meister – aber der Meister hat irgendwann aufgehört zu üben.' Welche Fähigkeit beherrscht du heute so selbstverständlich, dass du vergessen hast, wie viel Freude das Lernen gemacht hat?",en:"'Practice makes perfect – but even the master once forgot how much joy learning brought.' Which skill do you master so naturally today that you've forgotten how much joy the learning once brought?"},
+  {id:1003,pkg:10,de:"'Reden ist Silber, Schweigen ist Gold – aber Gold spricht man nicht an.' Wann hat ein mutiges Gespräch etwas Wertvolles in deinem Leben geöffnet?",en:"'Speech is silver, silence is golden – but you can't talk to gold.' When did a brave conversation open something valuable in your life?"},
+  {id:1004,pkg:10,de:"'Was du heute kannst besorgen, das verschiebe nicht auf morgen – aber morgen ist auch ein Tag.' Welche Entscheidung war rückblickend genau zum richtigen Zeitpunkt – obwohl du gewartet hast?",en:"'Never put off till tomorrow what you can do today – but tomorrow is a day too.' Which decision turned out to be perfectly timed in hindsight – even though you waited?"},
+  {id:1005,pkg:10,de:"'Kleider machen Leute – aber die interessantesten Leute machen ihre eigenen Kleider.' Wo hast du deinen eigenen Stil gefunden – und wie hat das andere auf dich aufmerksam gemacht?",en:"'Clothes make the man – but the most interesting people make their own clothes.' Where did you find your own style – and how did that make others notice you?"},
+  {id:1006,pkg:10,de:"'Wer anderen eine Grube gräbt, fällt selbst hinein – aber alle Fundamente brauchen Gruben.' Wo hat das tiefe Graben dir oder anderen erhebliche Vorteile gebracht?",en:"'What goes around comes around – but going deep creates the strongest foundations.' Where has deep digging brought you or others significant advantages?"},
+  {id:1007,pkg:10,de:"'Morgenstund hat Gold im Mund – aber abends kommt die Weisheit.' Wann bist du zu deinen besten Ideen oder Erkenntnissen gekommen – und was war der Moment davor?",en:"'The morning hour has gold in its mouth – but wisdom comes in the evening.' When did your best ideas or insights come to you – and what happened just before?"},
+  {id:1008,pkg:10,de:"'Viele Köche verderben den Brei – aber manchmal braucht der Brei einfach mehr Köche.' Welches Projekt oder Erlebnis war durch die Zusammenarbeit mit anderen so viel reicher geworden?",en:"'Too many cooks spoil the broth – but sometimes the broth just needs more cooks.' Which project or experience became so much richer through collaboration with others?"},
+  {id:1009,pkg:10,de:"'Der Apfel fällt nicht weit vom Stamm – aber manchmal rollt er den Hügel hinunter und landet in einem wunderschönen Tal.' Was hast du von deiner Familie mitbekommen – und was hast du daraus zu etwas Eigenem gemacht, das dich stolz macht?",en:"'The apple doesn't fall far from the tree – but sometimes it rolls downhill and lands in a beautiful valley.' What did you take from your family – and what did you make uniquely your own that makes you proud?"},
+  {id:1010,pkg:10,de:"'Ende gut, alles gut – aber was ist mit den schönen Momenten auf dem Weg dorthin?' Welcher Weg zu einem Ziel war so bereichernd, dass das Ziel selbst fast nebensächlich wurde?",en:"'All's well that ends well – but what about the beautiful moments along the way?' Which journey toward a goal was so enriching that the destination itself became almost secondary?"},
+  {id:1011,pkg:10,de:"'Wer rastet, der rostet – aber Pausen sind das Schönste am ganzen Tag.' Was verändert sich, wenn man sich nicht bewegt? Welche Konstanz liegt in der Veränderung?",en:"'All work and no play makes Jack a dull boy – but pauses are the most beautiful part of the day.' What changes when you stop moving? What remains constant within change?"},
+  {id:1012,pkg:10,de:"'Stille Wasser sind tief – aber manchmal fehlt auch nur der Wind.' Welcher stille Mensch in deinem Leben hat dich am meisten überrascht? Wann ist Stille ein Zeichen von Tiefe? Wie reagiert eine Pfütze auf den Wind – und wie reagiert der Ozean?",en:"'Still waters run deep – but sometimes there's just no wind.' Which quiet person in your life surprised you the most? When is silence a sign of depth? How does a puddle react to the wind – and how does the ocean?"},
+  {id:1013,pkg:10,de:"'Andere Länder, andere Sitten – aber manche Sitten sind überall gleich schön.' Welche Begegnung mit einer fremden Kultur hat dir etwas Wertvolles geschenkt, das du bis heute trägst?",en:"'When in Rome, do as the Romans do – but some customs are beautiful everywhere.' Which encounter with a foreign culture gave you something valuable that you still carry today?"},
+  {id:1014,pkg:10,de:"Einstein: 'Fantasie ist wichtiger als Wissen. Denn Wissen ist begrenzt.' Wo hat deine Fantasie dich weiter gebracht als dein Wissen?",en:"Einstein: 'Imagination is more important than knowledge. Knowledge is limited.' Where has your imagination taken you further than your knowledge?"},
+  {id:1015,pkg:10,de:"Einstein: 'Wenn du nicht in der Lage bist, etwas einfach zu erklären, hast du es nicht gut genug verstanden.' Welches komplexe Thema würdest du einem Kind gerne in drei Sätzen erklären können – und was würde dir dabei helfen?",en:"Einstein: 'If you can't explain it simply, you don't understand it well enough.' Which complex topic would you love to explain to a child in three sentences – and what would help you do that?"},
+  {id:1016,pkg:10,de:"Steve Jobs: 'Deine Zeit ist begrenzt. Verschwende sie nicht damit, das Leben eines anderen zu leben.' Welcher Moment in deinem Leben war der authentischste – wo du ganz sicher wusstest: das bin ich?",en:"Steve Jobs: 'Your time is limited. Don't waste it living someone else's life.' Which moment in your life felt the most authentically you?"},
+  {id:1017,pkg:10,de:"Steve Jobs: 'Das einzige, das ich je getan habe, war, großartigen Leuten zu vertrauen.' Wo hat sich kluges Vertrauen für dich wirklich gelohnt – und was macht für dich kluges Vertrauen aus?",en:"Steve Jobs: 'The only thing I've ever done is trust great people.' Where has smart trust truly paid off for you – and what makes trust truly smart in your eyes?"},
+  {id:1018,pkg:10,de:"Dalai Lama: 'Wenn du denkst, du bist zu klein um etwas zu bewirken, versuche mal, mit einer Mücke zu schlafen.' Wo hast du mit einer kleinen Geste eine große Wirkung erzielt? Und über welche Kleinigkeit hast du dich zuletzt sehr gefreut?",en:"Dalai Lama: 'If you think you're too small to make a difference, try sleeping with a mosquito.' Where did a small gesture of yours have a big impact? And what small thing recently made you very happy?"},
+  {id:1019,pkg:10,de:"Dalai Lama: 'Meine Religion ist Freundlichkeit.' Welcher Moment von echter Freundlichkeit hat dich am meisten überrascht – gegeben oder empfangen?",en:"Dalai Lama: 'My religion is kindness.' Which moment of genuine kindness surprised you the most – given or received?"},
+  {id:1020,pkg:10,de:"Sokrates: 'Ich weiß, dass ich nichts weiß.' Welches Thema fasziniert dich gerade so sehr, dass du merkst wie wenig du noch weißt – und wie schön dieses Gefühl ist? Gibt es Bereiche, wo du wiedergeben kannst was du gelernt hast – aber nicht wirklich weißt ob es wahr oder falsch ist? Warum ist dieses Bewusstsein für die Wissenschaft so wichtig?",en:"Socrates: 'I know that I know nothing.' Which topic fascinates you so much that you realize how little you know – and how beautiful is that feeling? Are there areas where you can repeat what you've learned but don't truly know if it's right or wrong? Why is this awareness so important for science?"},
+  {id:1021,pkg:10,de:"Aristoteles: 'Wir sind, was wir wiederholt tun. Exzellenz ist keine Handlung, sondern eine Gewohnheit.' Welche Gewohnheit hat dich zu einer besseren Version von dir gemacht – ohne dass du es anfangs gemerkt hast? Ist es dir beim Autofahren schon passiert, dass du eine längere Strecke zurückgelegt hast und hinterher merktest, dass du gar nicht bewusst dabei warst? Was sagt das über den Wert von Gewohnheiten?",en:"Aristotle: 'We are what we repeatedly do. Excellence is not an act, but a habit.' Which habit made you a better version of yourself without you noticing at first? Has it ever happened while driving that you covered a long distance and only afterward realized you weren't consciously present? What does that say about the value of habits?"},
+  {id:1022,pkg:10,de:"Churchill: 'Ein Optimist sieht in jeder Schwierigkeit eine Möglichkeit.' Wo hat dein Optimismus eine Tür geöffnet, die andere noch nicht mal gesehen haben? Und warum sind Pessimisten die besseren Vermögensverwalter?",en:"Churchill: 'An optimist sees opportunity in every difficulty.' Where has your optimism opened a door others hadn't even noticed? And why are pessimists the better wealth managers?"},
+  {id:1023,pkg:10,de:"Konfuzius: 'Wähle einen Beruf, den du liebst – und du wirst keinen einzigen Tag arbeiten müssen.' Was ermöglicht dir dein Beruf, das dein Leben lebenswerter macht?",en:"Confucius: 'Choose a job you love and you will never have to work a day in your life.' What does your work enable that makes your life more worth living?"},
+  {id:1024,pkg:10,de:"Mark Twain: 'Der Unterschied zwischen dem richtigen Wort und dem fast richtigen Wort ist der Unterschied zwischen Blitz und Glühwürmchen.' Wann haben die richtigen Worte in deinem Leben etwas entscheidend zum Positiven verändert?",en:"Mark Twain: 'The difference between the right word and the almost right word is the difference between lightning and a lightning bug.' When did the right words decisively change something for the better in your life?"},
+  {id:1025,pkg:10,de:"Churchill: 'Erfolg ist, von Misserfolg zu Misserfolg zu gehen, ohne die Begeisterung zu verlieren.' Wann kann Ausdauer hinderlich sein – und wie merkst du, ob mehr Ausdauer gefragt ist oder ob du ein Ziel besser loslassen solltest?",en:"Churchill: 'Success is going from failure to failure without losing enthusiasm.' When can perseverance be an obstacle – and how do you tell whether more endurance is needed or whether it's wiser to let a goal go?"},
+];
+
+// ============================================================
+// MANIFEST (inline, injected as blob)
+// ============================================================
+const manifestData = {
+  name: "Deep Talk – Resource Talk",
+  short_name: "Deep Talk",
+  description: "Resource Talk Edition – Positive conversation cards",
+  start_url: ".",
+  display: "standalone",
+  background_color: "#1a3a5c",
+  theme_color: "#1a3a5c",
+  orientation: "portrait",
+  icons: [
+    { src: "data:image/png;base64,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", sizes: "192x192", type: "image/png", purpose: "any maskable" },
+    { src: "data:image/png;base64,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", sizes: "512x512", type: "image/png", purpose: "any maskable" }
+  ]
+};
+const manifestBlob = new Blob([JSON.stringify(manifestData)], {type:'application/json'});
+const manifestURL = URL.createObjectURL(manifestBlob);
+document.getElementById('manifest-placeholder').href = manifestURL;
+
+// ============================================================
+// LANG
+// ============================================================
+function setLang(lang) {
+  state.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
+  document.getElementById('s-lang-de').classList.toggle('active', lang === 'de');
+  document.getElementById('s-lang-en').classList.toggle('active', lang === 'en');
+  updateUI();
+}
+
+// ============================================================
+// TABS
+// ============================================================
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+  const btns = document.querySelectorAll('.tab-btn');
+  const idx = {'play':0,'packages':1,'favorites':2,'settings':3}[name];
+  if(btns[idx]) btns[idx].classList.add('active');
+  if(name === 'favorites') renderFavorites();
+  if(name === 'packages') renderPackages();
+  if(name === 'settings') renderSettings();
+}
+
+// ============================================================
+// RENDER CHIPS
+// ============================================================
+function renderChips() {
+  const el = document.getElementById('pkg-chips');
+  el.innerHTML = PACKAGES.map(p => {
+    const owned = state.owned.has(p.id);
+    const active = state.currentPkg === p.id;
+    let cls = 'pkg-chip';
+    if(!owned) cls += ' locked';
+    if(active) cls += ' active';
+    return `<button class="${cls}" onclick="selectPkg(${p.id})">${p.emoji} ${p.name[state.lang]}</button>`;
+  }).join('');
+}
+
+// ============================================================
+// SELECT PACKAGE
+// ============================================================
+function selectPkg(id) {
+  state.currentPkg = id;
+  const pkg = PACKAGES.find(p => p.id === id);
+  if(!state.owned.has(id)) {
+    showPurchaseModal(pkg);
+    renderChips();
+    renderCardArea();
+    return;
+  }
+  const cards = ALL_CARDS.filter(c => c.pkg === id);
+  state.cards = shuffle([...cards]);
+  state.idx = 0;
+  renderChips();
+  renderCardArea();
+  resetTimer();
+}
+
+// ============================================================
+// CARD AREA
+// ============================================================
+function renderCardArea() {
+  const el = document.getElementById('card-area');
+  const pkg = PACKAGES.find(p => p.id === state.currentPkg);
+  
+  if(!state.owned.has(state.currentPkg)) {
+    el.innerHTML = `
+      <div class="locked-card">
+        <div class="locked-icon">🔒</div>
+        <div class="locked-title">${t('locked_title')}</div>
+        <div class="locked-sub">${pkg.name[state.lang]} · ${t('locked_sub')}</div>
+        <button class="unlock-btn" onclick="showPurchaseModal(PACKAGES.find(p=>p.id==${state.currentPkg}))">${t('unlock_btn')} – €0.99</button>
+      </div>`;
+    return;
+  }
+  if(state.cards.length === 0) {
+    el.innerHTML = '';
+    return;
+  }
+  const card = state.cards[state.idx];
+  const isFav = state.favorites.has(card.id);
+  const cardText = state.lang === 'de' ? card.de : card.en;
+  const total = state.cards.length;
+  const pct = ((state.idx+1)/total*100).toFixed(0);
+  
+  el.innerHTML = `
+    <div class="card-wrap">
+      <div class="card-meta">
+        <span class="card-badge">${pkg.emoji} ${pkg.name[state.lang]}</span>
+        <button class="fav-btn" onclick="toggleFav(${card.id})">${isFav ? '❤️' : '🤍'}</button>
+      </div>
+      <div class="card-text">${cardText}</div>
+      <div class="card-nav">
+        <button class="btn-prev" onclick="prevCard()" ${state.idx===0?'disabled style="opacity:0.4"':''}>${t('prev')}</button>
+        <button class="btn-shuffle" onclick="shuffleCards()" title="Mischen">${t('shuffle')}</button>
+        <button class="btn-next" onclick="nextCard()">${t('next')}</button>
+      </div>
+    </div>
+    <div class="card-progress">
+      ${t('card_of')} ${state.idx+1} ${t('of')} ${total}
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>`;
+}
+
+function nextCard() {
+  if(state.idx < state.cards.length - 1) {
+    state.idx++;
+    renderCardArea();
+    resetTimer();
+  } else {
+    toast(t('session_done'));
+    state.cards = shuffle([...ALL_CARDS.filter(c => c.pkg === state.currentPkg)]);
+    state.idx = 0;
+    renderCardArea();
+  }
+}
+
+function prevCard() {
+  if(state.idx > 0) {
+    state.idx--;
+    renderCardArea();
+    resetTimer();
+  }
+}
+
+function shuffleCards() {
+  state.cards = shuffle([...state.cards]);
+  state.idx = 0;
+  renderCardArea();
+  toast(t('shuffled'));
+}
+
+function toggleFav(id) {
+  if(state.favorites.has(id)) {
+    state.favorites.delete(id);
+    toast(t('fav_removed'));
+  } else {
+    state.favorites.add(id);
+    toast(t('fav_added'));
+  }
+  renderCardArea();
+  updateSettingsCounts();
+}
+
+// ============================================================
+// TIMER
+// ============================================================
+function setTimerMinutes(min) {
+  state.timerMin = min;
+  state.timerSec = min * 60;
+  document.querySelectorAll('.tpreset').forEach(b => b.classList.toggle('active', parseInt(b.textContent)===min));
+  updateTimerDisplay();
+  if(state.timerRunning) { stopTimer(); startTimer(); }
+}
+
+function toggleTimer() {
+  state.timerRunning ? stopTimer() : startTimer();
+}
+
+function startTimer() {
+  if(state.timerInterval) clearInterval(state.timerInterval);
+  state.timerRunning = true;
+  document.getElementById('tbtn-start').textContent = t('pause');
+  state.timerInterval = setInterval(() => {
+    if(state.timerSec > 0) {
+      state.timerSec--;
+      updateTimerDisplay();
+    } else {
+      clearInterval(state.timerInterval);
+      state.timerRunning = false;
+      document.getElementById('tbtn-start').textContent = t('start');
+      showTimerExpired();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  if(state.timerInterval) clearInterval(state.timerInterval);
+  state.timerRunning = false;
+  document.getElementById('tbtn-start').textContent = t('start');
+}
+
+function resetTimer() {
+  stopTimer();
+  state.timerSec = state.timerMin * 60;
+  updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(state.timerSec/60);
+  const s = state.timerSec % 60;
+  const el = document.getElementById('timer-display');
+  el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  el.classList.toggle('warn', state.timerSec < 60 && state.timerSec > 0);
+}
+
+function showTimerExpired() {
+  // Simple modal-style alert using our modal
+  document.getElementById('modal-emoji').textContent = '⏰';
+  document.getElementById('modal-title').textContent = t('timer_expired');
+  document.getElementById('modal-sub').textContent = t('continue_discuss');
+  document.getElementById('modal-price').textContent = '';
+  document.getElementById('modal-buy-btn').textContent = t('continue');
+  document.getElementById('modal-buy-btn').onclick = () => { closeModal(); resetTimer(); startTimer(); };
+  document.getElementById('modal-cancel-btn').textContent = t('next_card');
+  document.getElementById('modal-cancel-btn').onclick = () => { closeModal(); nextCard(); };
+  document.getElementById('modal').classList.add('show');
+}
+
+// ============================================================
+// PACKAGES TAB
+// ============================================================
+function renderPackages() {
+  const grid = document.getElementById('pkg-grid');
+  grid.innerHTML = PACKAGES.map(p => {
+    const owned = state.owned.has(p.id);
+    let priceBadge = p.isFree
+      ? `<span class="pkg-price free">${t('free')}</span>`
+      : owned
+        ? `<span class="pkg-price owned">${t('owned_label')}</span>`
+        : `<span class="pkg-price paid">€0.99</span>`;
+    return `
+      <div class="pkg-card ${owned?'owned':''} ${!owned?'locked':''}" onclick="pkgCardClick(${p.id})">
+        ${owned && !p.isFree ? '<span class="owned-badge">✓</span>' : ''}
+        <span class="pkg-emoji">${p.emoji}</span>
+        <div class="pkg-name">${p.name[state.lang]}</div>
+        <div class="pkg-count">25 ${t('pkg_cards')}</div>
+        ${priceBadge}
+      </div>`;
+  }).join('');
+
+  const bArea = document.getElementById('bundles-area');
+  const allOwned5 = [1,2,3,4,5].every(id => state.owned.has(id));
+  const allOwned8 = PACKAGES.every(p => state.owned.has(p.id));
+  bArea.innerHTML = `
+    <div class="bundle-box" style="margin-bottom:12px">
+      <div class="bundle-title">⚡ ${t('starter_title')}</div>
+      <div class="bundle-sub">${t('starter_sub')}</div>
+      <div class="bundle-price">${t('starter_price')}</div>
+      <div class="bundle-oldprice">${t('starter_old')}</div>
+      <button class="bundle-btn" onclick="buyBundle('starter')" ${allOwned5?'disabled style="opacity:0.5"':''}>
+        ${allOwned5 ? t('owned_label') : t('unlock_bundle')}
+      </button>
+    </div>
+    <div class="bundle-box" style="background:linear-gradient(135deg,#1a3a5c,#2c6fa8)">
+      <div class="bundle-title">🌟 ${t('full_title')}</div>
+      <div class="bundle-sub">${t('full_sub')}</div>
+      <div class="bundle-price">${t('full_price')}</div>
+      <div class="bundle-oldprice">${t('full_old')}</div>
+      <button class="bundle-btn" onclick="buyBundle('full')" ${allOwned8?'disabled style="opacity:0.5"':''}>
+        ${allOwned8 ? t('owned_label') : t('unlock_bundle')}
+      </button>
+    </div>`;
+}
+
+function pkgCardClick(id) {
+  showTab('play');
+  selectPkg(id);
+}
+
+function buyBundle(type) {
+  const ids = type === 'starter' ? [1,2,3,4,5] : [1,2,3,4,5,6,7,8];
+  ids.forEach(id => state.owned.add(id));
+  renderPackages();
+  renderChips();
+  renderSettings();
+  toast(type === 'starter' ? '⚡ Starter+ freigeschaltet!' : '🌟 Komplett-Bundle freigeschaltet!');
+}
+
+// ============================================================
+// PURCHASE MODAL
+// ============================================================
+function showPurchaseModal(pkg) {
+  state.pendingPurchase = pkg.id;
+  document.getElementById('modal-emoji').textContent = pkg.emoji;
+  document.getElementById('modal-title').textContent = t('buy_title') + ': ' + pkg.name[state.lang];
+  document.getElementById('modal-sub').textContent = t('buy_sub');
+  document.getElementById('modal-price').textContent = '€0.99';
+  document.getElementById('modal-buy-btn').textContent = t('buy_btn');
+  document.getElementById('modal-buy-btn').onclick = confirmPurchase;
+  document.getElementById('modal-cancel-btn').textContent = t('cancel');
+  document.getElementById('modal-cancel-btn').onclick = closeModal;
+  document.getElementById('modal').classList.add('show');
+}
+
+function confirmPurchase() {
+  if(state.pendingPurchase) {
+    state.owned.add(state.pendingPurchase);
+    selectPkg(state.pendingPurchase);
+    closeModal();
+    renderPackages();
+    updateSettingsCounts();
+    toast('✅ Paket freigeschaltet!');
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  state.pendingPurchase = null;
+  document.getElementById('modal-cancel-btn').onclick = closeModal;
+}
+
+// ============================================================
+// FAVORITES
+// ============================================================
+function renderFavorites() {
+  const el = document.getElementById('fav-list');
+  const favCards = ALL_CARDS.filter(c => state.favorites.has(c.id));
+  if(favCards.length === 0) {
+    el.innerHTML = `<div class="empty-state">
+      <span class="empty-icon">🤍</span>
+      <div class="empty-title">${t('no_fav')}</div>
+      <div class="empty-sub">${t('no_fav_sub')}</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = favCards.map(card => {
+    const pkg = PACKAGES.find(p => p.id === card.pkg);
+    return `<div class="fav-card">
+      <div style="flex:1">
+        <div class="fav-card-text">${state.lang==='de'?card.de:card.en}</div>
+        <div class="fav-card-meta">${pkg.emoji} ${pkg.name[state.lang]}</div>
+      </div>
+      <button class="fav-remove" onclick="removeFav(${card.id})">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function removeFav(id) {
+  state.favorites.delete(id);
+  renderFavorites();
+  updateSettingsCounts();
+}
+
+// ============================================================
+// SETTINGS
+// ============================================================
+function renderSettings() {
+  updateSettingsCounts();
+  document.getElementById('about-quote').innerHTML = t('about_quote').replace('\n','<br>');
+  document.getElementById('s-reset-btn').textContent = t('reset');
+}
+
+function updateSettingsCounts() {
+  document.getElementById('s-pkg-count').textContent = `${state.owned.size} / 10`;
+  document.getElementById('s-fav-count').textContent = state.favorites.size;
+}
+
+function resetAllData() {
+  if(confirm(t('reset_confirm'))) {
+    state.owned = new Set([1]);
+    state.favorites = new Set();
+    state.currentPkg = 1;
+    selectPkg(1);
+    renderPackages();
+    renderFavorites();
+    updateSettingsCounts();
+    toast('🔄 Reset!');
+  }
+}
+
+// ============================================================
+// UI UPDATE
+// ============================================================
+function updateUI() {
+  document.getElementById('h-tagline').textContent = t('tagline');
+  document.getElementById('tab-play-label').textContent = t('play');
+  document.getElementById('tab-pkg-label').textContent = t('packages');
+  document.getElementById('tab-fav-label').textContent = t('favorites');
+  document.getElementById('tab-set-label').textContent = t('settings');
+  document.getElementById('timer-label').textContent = t('timer');
+  document.getElementById('timer-preset-label').textContent = t('timer_preset');
+  document.getElementById('s-lang-label').textContent = t('lang_label');
+  document.getElementById('s-lang-sub').textContent = t('lang_sub');
+  document.getElementById('s-pkg-label').textContent = t('pkg_unlocked');
+  document.getElementById('s-fav-label').textContent = t('fav_label');
+  document.getElementById('tbtn-start').textContent = state.timerRunning ? t('pause') : t('start');
+  renderChips();
+  renderCardArea();
+  renderFavorites();
+  renderPackages();
+  renderSettings();
+}
+
+// ============================================================
+// HELPERS
+// ============================================================
+function shuffle(arr) {
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(()=>el.classList.remove('show'), 2800);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+// Dynamic bundle loader from GitHub Pages
+const BUNDLES_URL = 'https://jusch66.github.io/DeepTalk/bundles.json';
+
+async function loadRemoteBundles() {
+  try {
+    const res = await fetch(BUNDLES_URL);
+    if(!res.ok) throw new Error('offline');
+    const data = await res.json();
+    // Merge remote bundles with local fallback
+    window._remoteBundles = data.bundles;
+    renderPackages(); // re-render with updated bundle data
+  } catch(e) {
+    // Silent fallback - local bundles already rendered
+    console.log('Offline mode - using local bundles');
+  }
+}
+
+window.addEventListener('load', () => {
+  selectPkg(1);
+  updateUI();
+  loadRemoteBundles();
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hide');
+  }, 1200);
+});
+</script>
+</body>
+</html>

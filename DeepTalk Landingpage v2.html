@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Talk – Resource Talk Edition | AI Beneficio LLC</title>
+<meta name="description" content="75 free conversation cards that reveal what you never knew about the people you love most. No competition. No small talk. Just real conversations.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+:root {
+  --navy: #1a3a5c;
+  --blue: #2c6fa8;
+  --sky: #4a9fd4;
+  --gold: #f0c040;
+  --cream: #faf8f4;
+  --white: #ffffff;
+  --text: #1a2a3a;
+  --muted: #6b7f94;
+  --border: rgba(26,58,92,0.10);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* LANG TOGGLE */
+.lang-bar {
+  background: var(--navy);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.lang-btn {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.lang-btn.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,159,212,0.15) 0%, transparent 70%);
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(240,192,64,0.15);
+  border: 1px solid rgba(240,192,64,0.4);
+  color: var(--gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(36px, 7vw, 64px);
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero h1 em {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-sub {
+  font-size: clamp(16px, 3vw, 20px);
+  color: rgba(255,255,255,0.65);
+  margin: 16px auto 0;
+  max-width: 560px;
+  line-height: 1.6;
+}
+.hero-cta {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(240,192,64,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(240,192,64,0.5); }
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.18); }
+.hero-free-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+}
+.hero-free-note span { color: #7ddfad; font-weight: 600; }
+
+/* STORY */
+.story {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 96px;
+  color: var(--gold);
+  line-height: 0.5;
+  display: block;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+.story blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4vw, 28px);
+  color: var(--navy);
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.story-meta {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.story-body {
+  margin-top: 40px;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  text-align: left;
+}
+.story-body strong { color: var(--navy); }
+
+/* HOW IT WORKS */
+.how {
+  background: var(--cream);
+  padding: 80px 24px;
+}
+.section-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 12px;
+}
+.section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  color: var(--navy);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+.scenarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.scenario-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(26,58,92,0.08);
+  transition: transform 0.2s;
+}
+.scenario-card:hover { transform: translateY(-4px); }
+.scenario-emoji { font-size: 40px; display: block; margin-bottom: 16px; }
+.scenario-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.scenario-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* SAMPLE CARD */
+.sample {
+  padding: 80px 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.card-preview {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 40px rgba(26,58,92,0.12);
+  border-top: 5px solid var(--sky);
+  margin: 32px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.card-preview:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(26,58,92,0.15); }
+.card-pkg-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sky);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.card-question {
+  font-size: clamp(18px, 3.5vw, 24px);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.card-tap {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.card-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+.card-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #dde4eb;
+  transition: background 0.3s;
+}
+.card-dot.active { background: var(--sky); }
+
+/* PACKS */
+.packs {
+  background: var(--cream);
+  padding: 80px 24px;
+}
+.packs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+.pack-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26,58,92,0.07);
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.pack-card.free { border-color: #27ae60; }
+.pack-card:hover { transform: translateY(-3px); }
+.pack-emoji { font-size: 28px; display: block; margin-bottom: 8px; }
+.pack-name { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.pack-count { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.pack-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.pack-badge.free { background: #e8f8f0; color: #27ae60; }
+.pack-badge.paid { background: #eef4fc; color: var(--blue); }
+
+/* BUNDLES */
+.bundles {
+  padding: 80px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.bundle-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.bundle-card {
+  border-radius: 24px;
+  padding: 36px 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.bundle-card::before {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  top: -100px; right: -100px;
+}
+.bundle-highlight {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.bundle-emoji { font-size: 36px; margin-bottom: 12px; display: block; }
+.bundle-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.bundle-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+.bundle-price { font-size: 40px; font-weight: 800; color: var(--gold); }
+.bundle-oldprice { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: line-through; margin-bottom: 20px; }
+.bundle-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.bundle-btn:hover { transform: scale(1.02); }
+
+/* TIKTOK CHALLENGE */
+.challenge {
+  background: var(--navy);
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.challenge::before {
+  content: '🎥';
+  position: absolute;
+  font-size: 300px;
+  opacity: 0.03;
+  top: -50px; right: -50px;
+}
+.challenge .section-label { color: var(--gold); }
+.challenge .section-title { color: white; }
+.challenge-box {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  padding: 40px 32px;
+}
+.challenge-steps {
+  text-align: left;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.challenge-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.step-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-text {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+  padding-top: 4px;
+}
+.step-text strong { color: white; }
+.challenge-reward {
+  background: rgba(240,192,64,0.1);
+  border: 1px solid rgba(240,192,64,0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 24px;
+  text-align: left;
+}
+.reward-title {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.reward-text {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.hashtag {
+  display: inline-block;
+  background: rgba(74,159,212,0.2);
+  color: var(--sky);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 16px 4px 0;
+}
+
+/* SIGNUP FORM */
+.signup {
+  padding: 80px 24px;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.form-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  color: var(--text);
+}
+.form-input:focus { border-color: var(--sky); }
+.form-submit {
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.form-submit:hover { background: var(--navy); }
+.form-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* PRINCIPLE */
+.principle {
+  background: var(--cream);
+  padding: 60px 24px;
+  text-align: center;
+}
+.principle-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4vw, 30px);
+  color: var(--navy);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-style: italic;
+}
+.principle-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--navy);
+  padding: 40px 24px;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+}
+.footer a { color: var(--sky); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero { padding: 60px 20px 48px; }
+  .bundle-cards { grid-template-columns: 1fr; }
+  .form-group { flex-direction: column; }
+  .form-input, .form-submit { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('de')">DE</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge" id="hero-badge">✨ Resource Talk Edition</div>
+  <h1 id="hero-h1">Conversations that reveal<br><em>what you never knew</em></h1>
+  <p class="hero-sub" id="hero-sub">75 free conversation cards for couples, friends, and groups. No competition. No small talk. Just real moments.</p>
+  <div class="hero-cta">
+    <a href="#download" class="btn-primary" id="hero-cta1">▶ Play for Free</a>
+    <a href="#packs" class="btn-secondary" id="hero-cta2">See all packs</a>
+  </div>
+  <p class="hero-free-note" id="hero-free-note"><span>75 questions free</span> · No sign-up · Works on iPhone & Android</p>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <span class="quote-mark">"</span>
+  <blockquote id="story-quote">I've been with this man for almost 60 years – and I didn't know this about him.</blockquote>
+  <p class="story-meta" id="story-meta">— Said after 90 minutes of playing Deep Talk</p>
+  <div class="story-body">
+    <p id="story-body1"><strong>Fifty years of marriage. Ninety minutes of play. One sentence that said everything.</strong></p>
+    <br>
+    <p id="story-body2">Deep Talk isn't therapy. It isn't coaching. It's a collection of carefully crafted questions that search for what's already there – the strengths, the joys, the stories, the wisdom that we carry every day but almost never share.</p>
+    <br>
+    <p id="story-body3">Each question is built around a single principle: <strong>the question is the search term.</strong> The brain finds what it looks for. Every question in Deep Talk points directly at something good.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <p class="section-label" id="how-label">How it works</p>
+  <h2 class="section-title" id="how-title">One card. Five minutes.<br>A conversation you won't forget.</h2>
+  <div class="scenarios">
+    <div class="scenario-card">
+      <span class="scenario-emoji">💑</span>
+      <div class="scenario-title" id="sc1-title">For couples</div>
+      <p class="scenario-desc" id="sc1-desc">You think you know everything about each other. Deep Talk finds the stories you've never told – and the answers that will surprise you both.</p>
+    </div>
+    <div class="scenario-card">
+      <span class="scenario-emoji">🥂</span>
+      <div class="scenario-title" id="sc2-title">For groups & friends</div>
+      <p class="scenario-desc" id="sc2-desc">From 2 to 6 people. One card at the table, everyone answers. No winners, no losers – just conversations that last long after the evening ends.</p>
+    </div>
+    <div class="scenario-card">
+      <span class="scenario-emoji">🍽️</span>
+      <div class="scenario-title" id="sc3-title">Instead of quiz night</div>
+      <p class="scenario-desc" id="sc3-desc">Replace the trivia battle with something that actually connects people. Perfect for restaurants, dinner parties, or any evening that deserves more than small talk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE CARDS -->
+<section class="sample">
+  <p class="section-label" id="sample-label">Try a card</p>
+  <h2 class="section-title" id="sample-title">See what a conversation<br>feels like</h2>
+  <div class="card-preview" onclick="nextSampleCard()">
+    <div class="card-pkg-label" id="sample-pkg">😄 The Amusing Start · Free</div>
+    <div class="card-question" id="sample-q">What was the best surprise of your life?</div>
+    <div class="card-tap" id="sample-tap">Tap to see another card →</div>
+    <div class="card-dots">
+      <div class="card-dot active" id="dot0"></div>
+      <div class="card-dot" id="dot1"></div>
+      <div class="card-dot" id="dot2"></div>
+      <div class="card-dot" id="dot3"></div>
+      <div class="card-dot" id="dot4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section class="packs" id="packs">
+  <p class="section-label" id="packs-label">The packs</p>
+  <h2 class="section-title" id="packs-title">250 questions across 10 packs.<br>75 completely free.</h2>
+  <div class="packs-grid" id="packs-grid">
+    <!-- Rendered by JS -->
+  </div>
+  <p style="text-align:center;font-size:14px;color:var(--muted)" id="packs-note">The 3 free packs give you hours of conversation. Unlock more anytime.</p>
+</section>
+
+<!-- BUNDLES -->
+<section class="bundles" id="bundles">
+  <p class="section-label" id="bundles-label">Bundles</p>
+  <h2 class="section-title" id="bundles-title">Unlock everything.<br>Pay once, keep forever.</h2>
+  <div class="bundle-cards" id="bundle-cards">
+    <!-- Rendered dynamically from bundles.json -->
+    <div style="text-align:center;padding:40px;color:var(--muted)" id="bundles-loading">Loading bundles…</div>
+  </div>
+</section>
+
+<!-- TIKTOK CHALLENGE -->
+<section class="challenge" id="challenge">
+  <p class="section-label" id="ch-label">Deep Talk Challenge</p>
+  <h2 class="section-title" id="ch-title">Film 3 minutes.<br>Get new cards every month. Forever.</h2>
+  <div class="challenge-box">
+    <div class="challenge-steps">
+      <div class="challenge-step">
+        <div class="step-num">1</div>
+        <div class="step-text" id="ch-step1">Play a card with someone. <strong>Film 2–3 minutes</strong> of your real conversation. No script, no editing.</div>
+      </div>
+      <div class="challenge-step">
+        <div class="step-num">2</div>
+        <div class="step-text" id="ch-step2">Post it with <strong>#DeepTalkChallenge</strong> on TikTok, Instagram Reels, or YouTube Shorts.</div>
+      </div>
+      <div class="challenge-step">
+        <div class="step-num">3</div>
+        <div class="step-text" id="ch-step3">Submit your video link below. <strong>We add you to the Creator Community</strong> and send you new free cards every month.</div>
+      </div>
+    </div>
+    <div class="challenge-reward">
+      <div class="reward-title" id="ch-reward-title">🎁 Your reward</div>
+      <div class="reward-text" id="ch-reward-text">Every month, Creator Community members receive a new exclusive question pack – before it's available to anyone else. No purchase needed. Ever.</div>
+    </div>
+    <div>
+      <span class="hashtag">#DeepTalkChallenge</span>
+      <span class="hashtag">#DeepTalkEN</span>
+      <span class="hashtag">#DeepTalkDE</span>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="signup" id="download">
+  <p class="section-label" id="signup-label">Join the community</p>
+  <h2 class="section-title" id="signup-title">Get the app + submit<br>your challenge video</h2>
+  <p style="color:var(--muted);font-size:15px;margin-top:8px" id="signup-sub">Enter your email and video link to join the Creator Community.</p>
+  <div class="form-group">
+    <input type="email" class="form-input" id="form-email" placeholder="your@email.com">
+    <button class="form-submit" id="form-btn" onclick="submitChallenge()">Submit video →</button>
+  </div>
+  <input type="url" class="form-input" id="form-video" placeholder="https://tiktok.com/your-video" style="margin-top:10px;width:100%">
+  <p class="form-note" id="form-note">We'll send you a confirmation and your first free monthly pack.</p>
+  <div style="margin-top:40px;padding:28px;background:var(--cream);border-radius:20px">
+    <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px" id="dl-title">▼ Download the app</p>
+    <a href="DeepTalk_App_v3.html" download class="btn-primary" style="display:inline-block" id="dl-btn">📱 Download Deep Talk (Free)</a>
+    <p style="font-size:12px;color:var(--muted);margin-top:12px" id="dl-note">Open in Safari (iPhone) or Chrome (Android) · Tap Share → Add to Home Screen</p>
+  </div>
+</section>
+
+<!-- PRINCIPLE -->
+<section class="principle">
+  <p class="principle-text" id="principle-text">"The question is the search term. The brain finds what it looks for."</p>
+  <p class="principle-sub" id="principle-sub">The founding principle of Deep Talk · AI Beneficio LLC · 2026</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 AI Beneficio LLC · <a href="https://www.aibeneficio.com">aibeneficio.com</a> · <a href="mailto:info@aibeneficio.com">info@aibeneficio.com</a></p>
+  <p style="margin-top:8px"><a href="https://www.aibeneficio.com/privacy-policy">Privacy Policy</a> · <a href="https://www.aibeneficio.com/accessibility-statement">Accessibility</a></p>
+</footer>
+
+<script>
+// ============================================================
+// LANGUAGE
+// ============================================================
+const LANG = {
+  en: {
+    'hero-badge': '✨ Resource Talk Edition',
+    'hero-h1': 'Conversations that reveal<br><em>what you never knew</em>',
+    'hero-sub': '75 free conversation cards for couples, friends, and groups. No competition. No small talk. Just real moments.',
+    'hero-cta1': '▶ Play for Free',
+    'hero-cta2': 'See all packs',
+    'hero-free-note': '<span>75 questions free</span> · No sign-up · Works on iPhone & Android',
+    'story-quote': 'I\'ve been with this man for almost 60 years – and I didn\'t know this about him.',
+    'story-meta': '— Said after 90 minutes of playing Deep Talk',
+    'story-body1': '<strong>Fifty years of marriage. Ninety minutes of play. One sentence that said everything.</strong>',
+    'story-body2': 'Deep Talk isn\'t therapy. It isn\'t coaching. It\'s a collection of carefully crafted questions that search for what\'s already there – the strengths, the joys, the stories, the wisdom that we carry every day but almost never share.',
+    'story-body3': 'Each question is built around a single principle: <strong>the question is the search term.</strong> The brain finds what it looks for. Every question in Deep Talk points directly at something good.',
+    'how-label': 'How it works',
+    'how-title': 'One card. Five minutes.<br>A conversation you won\'t forget.',
+    'sc1-title': 'For couples',
+    'sc1-desc': 'You think you know everything about each other. Deep Talk finds the stories you\'ve never told – and the answers that will surprise you both.',
+    'sc2-title': 'For groups & friends',
+    'sc2-desc': 'From 2 to 6 people. One card at the table, everyone answers. No winners, no losers – just conversations that last long after the evening ends.',
+    'sc3-title': 'Instead of quiz night',
+    'sc3-desc': 'Replace the trivia battle with something that actually connects people. Perfect for restaurants, dinner parties, or any evening that deserves more than small talk.',
+    'sample-label': 'Try a card',
+    'sample-title': 'See what a conversation<br>feels like',
+    'sample-tap': 'Tap to see another card →',
+    'packs-label': 'The packs',
+    'packs-title': '250 questions across 10 packs.<br>75 completely free.',
+    'packs-note': 'The 3 free packs give you hours of conversation. Unlock more anytime.',
+    'bundles-label': 'Bundles',
+    'bundles-title': 'Unlock everything.<br>Pay once, keep forever.',
+    'ch-label': 'Deep Talk Challenge',
+    'ch-title': 'Film 3 minutes.<br>Get new cards every month. Forever.',
+    'ch-step1': 'Play a card with someone. <strong>Film 2–3 minutes</strong> of your real conversation. No script, no editing.',
+    'ch-step2': 'Post it with <strong>#DeepTalkChallenge</strong> on TikTok, Instagram Reels, or YouTube Shorts.',
+    'ch-step3': 'Submit your video link below. <strong>We add you to the Creator Community</strong> and send you new free cards every month.',
+    'ch-reward-title': '🎁 Your reward',
+    'ch-reward-text': 'Every month, Creator Community members receive a new exclusive question pack – before it\'s available to anyone else. No purchase needed. Ever.',
+    'signup-label': 'Join the community',
+    'signup-title': 'Get the app + submit<br>your challenge video',
+    'signup-sub': 'Enter your email and video link to join the Creator Community.',
+    'form-btn': 'Submit video →',
+    'form-note': 'We\'ll send you a confirmation and your first free monthly pack.',
+    'dl-title': '▼ Download the app',
+    'dl-btn': '📱 Download Deep Talk (Free)',
+    'dl-note': 'Open in Safari (iPhone) or Chrome (Android) · Tap Share → Add to Home Screen',
+    'principle-text': '"The question is the search term. The brain finds what it looks for."',
+    'principle-sub': 'The founding principle of Deep Talk · AI Beneficio LLC · 2026',
+    sample_cards: [
+      {pkg:'😄 The Amusing Start · Free', q:'What was the best surprise of your life?'},
+      {pkg:'🌱 Open to New Things? · Free', q:'Which skill do you master so well today that you\'re surprised by how natural it feels?'},
+      {pkg:'🤔 Is That Really True? · Free', q:'"The early bird catches the worm – but only the early worm." When was sleeping in the smarter choice?'},
+      {pkg:'💪 What Makes Me Me · Premium', q:'You are stronger than you thought. Which areas do you master that are signs of this strength?'},
+      {pkg:'🌅 Beautiful Memories · Premium', q:'What was the moment when you knew: that was exactly right.'},
+    ],
+    packs: [
+      {id:1,emoji:'😄',name:'The Amusing Start',free:true},
+      {id:9,emoji:'🌱',name:'Open to New Things?',free:true},
+      {id:10,emoji:'🤔',name:'Is That Really True?',free:true},
+      {id:2,emoji:'🌅',name:'Beautiful Memories',free:false},
+      {id:3,emoji:'✨',name:'What Brings Me Joy',free:false},
+      {id:4,emoji:'💪',name:'What Makes Me Me',free:false},
+      {id:5,emoji:'🚀',name:'Future Projects & Plans',free:false},
+      {id:6,emoji:'👥',name:'People in My Life',free:false},
+      {id:7,emoji:'💬',name:'Quotes That Inspire Me',free:false},
+      {id:8,emoji:'🎭',name:'Amusing & Unconventional',free:false},
+    ],
+    free_badge:'Free',paid_badge:'€0.99',
+    bundle_btn:'Unlock bundle',
+    questions:'questions',
+  },
+  de: {
+    'hero-badge': '✨ Resource Talk Edition',
+    'hero-h1': 'Gespräche, die zeigen<br><em>was du noch nicht wusstest</em>',
+    'hero-sub': '75 kostenlose Gesprächskarten für Paare, Freunde und Gruppen. Kein Wettbewerb. Kein Smalltalk. Echte Momente.',
+    'hero-cta1': '▶ Kostenlos spielen',
+    'hero-cta2': 'Alle Pakete ansehen',
+    'hero-free-note': '<span>75 Fragen kostenlos</span> · Keine Anmeldung · iPhone & Android',
+    'story-quote': 'Ich bin fast 60 Jahre mit diesem Mann zusammen – und das wusste ich noch nicht über ihn.',
+    'story-meta': '— Gesagt nach 90 Minuten Deep Talk spielen',
+    'story-body1': '<strong>Fast 60 Jahre Ehe. Eineinhalb Stunden gespielt. Ein Satz, der alles gesagt hat.</strong>',
+    'story-body2': 'Deep Talk ist keine Therapie. Kein Coaching. Es ist eine Sammlung sorgfältig entwickelter Fragen, die suchen, was bereits da ist – die Stärken, die Freuden, die Geschichten, die Weisheit, die wir jeden Tag mit uns tragen, aber fast nie teilen.',
+    'story-body3': 'Jede Frage folgt einem einzigen Prinzip: <strong>Die Frage ist der Suchbegriff.</strong> Das Gehirn findet, wonach es sucht. Jede Frage in Deep Talk zeigt direkt auf etwas Gutes.',
+    'how-label': 'So funktioniert es',
+    'how-title': 'Eine Karte. Fünf Minuten.<br>Ein Gespräch, das bleibt.',
+    'sc1-title': 'Für Paare',
+    'sc1-desc': 'Du denkst, du weißt alles über den anderen. Deep Talk findet die Geschichten, die noch nie erzählt wurden – und Antworten, die euch beide überraschen.',
+    'sc2-title': 'Für Gruppen & Freunde',
+    'sc2-desc': 'Von 2 bis 6 Personen. Eine Karte am Tisch, alle antworten. Keine Gewinner, keine Verlierer – nur Gespräche, die lange nach dem Abend noch nachhallen.',
+    'sc3-title': 'Statt Quiz-Abend',
+    'sc3-desc': 'Ersetze den Wissenswettbewerb durch etwas, das Menschen wirklich verbindet. Perfekt für Restaurants, Dinnerpartys oder jeden Abend, der mehr als Smalltalk verdient.',
+    'sample-label': 'Eine Karte ausprobieren',
+    'sample-title': 'Erlebe, wie sich<br>ein Gespräch anfühlt',
+    'sample-tap': 'Tippe für die nächste Karte →',
+    'packs-label': 'Die Pakete',
+    'packs-title': '250 Fragen in 10 Paketen.<br>75 davon völlig kostenlos.',
+    'packs-note': 'Die 3 kostenlosen Pakete ermöglichen stundenlange Gespräche. Weitere Pakete jederzeit freischaltbar.',
+    'bundles-label': 'Bundles',
+    'bundles-title': 'Alles freischalten.<br>Einmal zahlen, für immer behalten.',
+    'ch-label': 'Deep Talk Challenge',
+    'ch-title': '3 Minuten filmen.<br>Jeden Monat neue Karten. Für immer.',
+    'ch-step1': 'Spiele eine Karte mit jemandem. <strong>Filme 2–3 Minuten</strong> eures echten Gesprächs. Kein Skript, kein Schnitt.',
+    'ch-step2': 'Lade es hoch mit <strong>#DeepTalkChallenge</strong> auf TikTok, Instagram Reels oder YouTube Shorts.',
+    'ch-step3': 'Schicke uns den Link unten. <strong>Wir nehmen dich in die Creator Community auf</strong> und schicken dir jeden Monat neue kostenlose Karten.',
+    'ch-reward-title': '🎁 Deine Belohnung',
+    'ch-reward-text': 'Jeden Monat erhalten Creator Community Mitglieder ein neues exklusives Fragenpaket – bevor es für alle anderen verfügbar ist. Kein Kauf nötig. Niemals.',
+    'signup-label': 'Community beitreten',
+    'signup-title': 'App herunterladen + Challenge<br>Video einreichen',
+    'signup-sub': 'Gib deine E-Mail und den Videolink ein, um der Creator Community beizutreten.',
+    'form-btn': 'Video einreichen →',
+    'form-note': 'Du erhältst eine Bestätigung und dein erstes kostenloses Monatspaket.',
+    'dl-title': '▼ App herunterladen',
+    'dl-btn': '📱 Deep Talk herunterladen (Kostenlos)',
+    'dl-note': 'In Safari öffnen (iPhone) oder Chrome (Android) · Teilen → Zum Home-Bildschirm',
+    'principle-text': '"Die Frage ist der Suchbegriff. Das Gehirn findet, wonach es sucht."',
+    'principle-sub': 'Das Grundprinzip von Deep Talk · AI Beneficio LLC · 2026',
+    sample_cards: [
+      {pkg:'😄 Der amüsante Einstieg · Kostenlos', q:'Was war die beste Überraschung in deinem Leben?'},
+      {pkg:'🌱 Offen für Neues? · Kostenlos', q:'Welche Fähigkeit beherrscht du heute so gut, dass du selbst überrascht bist, wie natürlich sie sich anfühlt?'},
+      {pkg:'🤔 Stimmt das wirklich? · Kostenlos', q:'"Der frühe Vogel fängt den Wurm – aber auch nur den frühen Wurm." Wann war Ausschlafen die klügere Entscheidung?'},
+      {pkg:'💪 Was mich ausmacht · Premium', q:'Du bist stärker als du dachtest. Welche Bereiche meisterst du, die Zeichen dieser Stärke sind?'},
+      {pkg:'🌅 Schöne Erinnerungen · Premium', q:'Was war der Moment, in dem du wusstest: Das war genau richtig.'},
+    ],
+    packs: [
+      {id:1,emoji:'😄',name:'Der amüsante Einstieg',free:true},
+      {id:9,emoji:'🌱',name:'Offen für Neues?',free:true},
+      {id:10,emoji:'🤔',name:'Stimmt das wirklich?',free:true},
+      {id:2,emoji:'🌅',name:'Schöne Erinnerungen',free:false},
+      {id:3,emoji:'✨',name:'Was mir Freude macht',free:false},
+      {id:4,emoji:'💪',name:'Was mich ausmacht',free:false},
+      {id:5,emoji:'🚀',name:'Zukunftsprojekte & Pläne',free:false},
+      {id:6,emoji:'👥',name:'Menschen in meinem Leben',free:false},
+      {id:7,emoji:'💬',name:'Zitate, die mich inspirieren',free:false},
+      {id:8,emoji:'🎭',name:'Amüsant & unkonventionell',free:false},
+    ],
+    free_badge:'Kostenlos',paid_badge:'0,99 €',
+    bundle_btn:'Bundle freischalten',
+    questions:'Fragen',
+  }
+};
+
+let currentLang = 'en';
+let sampleIdx = 0;
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang)
+  );
+  const L = LANG[lang];
+  // Update all text elements
+  Object.keys(L).forEach(key => {
+    const el = document.getElementById(key);
+    if(el && typeof L[key] === 'string') el.innerHTML = L[key];
+  });
+  // Update sample card
+  renderSampleCard();
+  // Update packs grid
+  renderPacks();
+  // Re-render bundles with new lang
+  renderBundles(window._bundlesData);
+}
+
+// ============================================================
+// SAMPLE CARDS
+// ============================================================
+function renderSampleCard() {
+  const cards = LANG[currentLang].sample_cards;
+  const card = cards[sampleIdx % cards.length];
+  document.getElementById('sample-pkg').textContent = card.pkg;
+  document.getElementById('sample-q').textContent = card.q;
+  // Update dots
+  for(let i=0;i<5;i++){
+    const d = document.getElementById('dot'+i);
+    if(d) d.classList.toggle('active', i === sampleIdx % 5);
+  }
+}
+
+function nextSampleCard() {
+  sampleIdx++;
+  renderSampleCard();
+}
+
+// ============================================================
+// PACKS GRID
+// ============================================================
+function renderPacks() {
+  const L = LANG[currentLang];
+  const grid = document.getElementById('packs-grid');
+  grid.innerHTML = L.packs.map(p => `
+    <div class="pack-card ${p.free?'free':''}">
+      <span class="pack-emoji">${p.emoji}</span>
+      <div class="pack-name">${p.name}</div>
+      <div class="pack-count">25 ${L.questions}</div>
+      <span class="pack-badge ${p.free?'free':'paid'}">${p.free?L.free_badge:L.paid_badge}</span>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// BUNDLES – loaded dynamically
+// ============================================================
+window._bundlesData = null;
+
+async function loadBundles() {
+  // Try to load from GitHub Pages – replace URL once GitHub is set up
+  const BUNDLES_URL = 'https://jusch66.github.io/DeepTalk/bundles.json';
+  try {
+    const res = await fetch(BUNDLES_URL);
+    if(!res.ok) throw new Error('not found');
+    const data = await res.json();
+    window._bundlesData = data;
+    renderBundles(data);
+  } catch(e) {
+    // Fallback: hardcoded bundles
+    window._bundlesData = null;
+    renderBundles(null);
+  }
+}
+
+function renderBundles(data) {
+  const L = LANG[currentLang];
+  const container = document.getElementById('bundle-cards');
+  const lang = currentLang;
+
+  const bundles = data ? data.bundles : [
+    {
+      id:'starter', emoji:'⚡',
+      title_en:'Starter+ Bundle', title_de:'Starter+ Bundle',
+      sub_en:'Packs 1, 9, 10 + 2 Premium · 125 questions',
+      sub_de:'Pakete 1, 9, 10 + 2 Premium · 125 Fragen',
+      price_en:'€3.99', price_de:'3,99 €',
+      oldprice_en:'instead of €4.95', oldprice_de:'statt 4,95 €',
+      highlight:false,
+      gradient:'linear-gradient(135deg,#1a3a5c,#2c6fa8)'
+    },
+    {
+      id:'complete', emoji:'🌟',
+      title_en:'Complete Bundle', title_de:'Komplett-Bundle',
+      sub_en:'All 10 packs · 250 questions',
+      sub_de:'Alle 10 Pakete · 250 Fragen',
+      price_en:'€5.99', price_de:'5,99 €',
+      oldprice_en:'instead of €8.93', oldprice_de:'statt 8,93 €',
+      highlight:true,
+      gradient:'linear-gradient(135deg,#1a3a5c,#4a9fd4)'
+    }
+  ];
+
+  container.innerHTML = bundles.map(b => `
+    <div class="bundle-card" style="background:${b.gradient}">
+      ${b.highlight ? `<span class="bundle-highlight">⭐ Best value</span>` : ''}
+      <span class="bundle-emoji">${b.emoji}</span>
+      <div class="bundle-title">${lang==='de'?b.title_de:b.title_en}</div>
+      <div class="bundle-sub">${lang==='de'?b.sub_de:b.sub_en}</div>
+      <div class="bundle-price">${lang==='de'?b.price_de:b.price_en}</div>
+      <div class="bundle-oldprice">${lang==='de'?b.oldprice_de:b.oldprice_en}</div>
+      <a href="mailto:info@aibeneficio.com?subject=Deep Talk Bundle: ${b.id}" class="bundle-btn">${L.bundle_btn}</a>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// CHALLENGE FORM
+// ============================================================
+function submitChallenge() {
+  const email = document.getElementById('form-email').value;
+  const video = document.getElementById('form-video').value;
+  if(!email) { alert('Please enter your email.'); return; }
+  const subject = encodeURIComponent('Deep Talk Challenge Submission');
+  const body = encodeURIComponent(`Email: ${email}\nVideo: ${video || 'Not provided yet'}`);
+  window.location.href = `mailto:info@aibeneficio.com?subject=${subject}&body=${body}`;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderSampleCard();
+renderPacks();
+loadBundles();
+</script>
+</body>
+</html>
